@@ -1,40 +1,37 @@
 window {
     margin: 0px;
     background-color: #232136;
-    border-radius: 0px;
-    border: 2px solid #eb6f92;
+    border: solid 1px #393552; 
+    border-radius: 7px;
     color: #e0def4;
     font-family: 'JetBrains Mono Medium Nerd Font';
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #input {
     margin: 5px;
-    border-radius: 0px;
     border: none;
-    border-radius: 0px;;
+    border-radius: 7px;;
     color: #eb6f92;
     background-color: #393552;
-    
 }
 
 #inner-box {
     margin: 5px;
-    border: none;
-    background-color: #393552;
     color: #232136;
-    border-radius: 0px;
+    background-color: #393552;
+    border-radius: 7px;
 }
 
 #outer-box {
     margin: 15px;
     border: none;
+    border-radiux: 7px;
     background-color: #232136;
 }
 
 #scroll {
     margin: 0px;
-    border: none;
 }
 
 #text {
@@ -46,13 +43,13 @@ window {
 #entry:selected {
     background-color: #eb6f92;
     color: #232136;
-    border-radius: 0px;;
+    border-radius: 7px;
     outline: none;
 }
 
 #entry:selected * {
     background-color: #eb6f92;
     color: #232136;
-    border-radius: 0px;;
+    border-radius: 7px;;
     outline: none;
 }

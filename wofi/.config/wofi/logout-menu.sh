@@ -4,7 +4,7 @@
 options="lock\nreboot\nshutdown"
 
 # Use wofi in dmenu mode to let the user select an option
-selection=$(echo -e "$options" | wofi --dmenu --prompt "Select an option:")
+selection=$(echo -e "$options" | wofi --dmenu --height 150 --width 200 --prompt "Select an option")
 
 # Take action based on the selection
 case "$selection" in

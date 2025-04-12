@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Get the workspace information
 workspaces=$(hyprctl clients -j | sed -e 's/\x1b\[[0-9;]*m//g' | jq -r '.[] | .workspace.id')

@@ -20,6 +20,7 @@ DESKTOP=(
 	hyprland-git
 	hyprlock
 	hypridle
+	hyprpolkitagent
 	swaync
 	gtk4
 	nwg-look
