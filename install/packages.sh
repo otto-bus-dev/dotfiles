@@ -5,7 +5,7 @@ SYSTEM_UTILITIES=(
 	bluez
 	bluez-utils
 	blueman
-	nvidia
+	nvidia-open
 	nvidia-utils
 	nvidia-settings
 	nvidia-dkms
@@ -21,6 +21,8 @@ DESKTOP=(
 	hyprlock
 	hypridle
 	hyprpolkitagent
+	hyprcursor
+	hyprpaper
 	swaync
 	gtk4
 	nwg-look

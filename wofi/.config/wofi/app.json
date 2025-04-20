@@ -1,0 +1,21 @@
+{
+	"prompt" : "Select an app" ,
+	"options": [
+		 {
+			 "option":"brave",
+			 "action":"brave"
+		 },
+		 {
+			 "option":"files",
+			 "action":"nautilus"
+		 },
+		 {
+			 "option":"kitty",
+			 "action":"kitty"
+		 },
+		 {
+			 "option":"obsidian",
+			 "action":"obsidian"
+		 }
+	] 
+}

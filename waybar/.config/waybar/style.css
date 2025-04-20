@@ -5,6 +5,7 @@
     font-weight: bold;
     font-size: 12px;
     min-height: 10px;
+    opacity:0.95;
 }
 
 @import "theme.css";
@@ -13,11 +14,19 @@ window#waybar {
     background: @bar-bg;
 }
 
+/* tooltip { */
+/*     background: @base; */
+/*     color: @text; */
+/*     border-radius: 7px; */
+/*     border-width: 0px; */
+/* } */
 tooltip {
-    background: @base;
-    color: @text;
-    border-radius: 7px;
-    border-width: 0px;
+    border-radius: 8px; /* Rounded corners */
+    background-color: @base; /* Semi-transparent black background */
+    color: @text; /* Text color */
+    padding: 10px; /* Add padding to the tooltip */
+    font-size: 12px; /* Adjust font size */
+    border: 1px solid @subtle; /* Optional: Add a border */
 }
 
 #workspaces button {
@@ -69,8 +78,8 @@ tooltip {
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     margin-left: 0px;
     padding-left: 3px;
     padding-right: 3px;
@@ -78,6 +87,9 @@ tooltip {
     background: @base;
     color: @text;
     animation: ws_normal 20s ease-in-out 1;
+    
+    border-top: 1px solid @subtle; /* Optional: Add a border */
+    border-bottom : 1px solid @subtle; /* Optional: Add a border */
 }
 
 
@@ -172,6 +184,9 @@ tooltip {
     margin: 4px 0px 4px 0px;
     padding-left: 4px;
     padding-right: 4px;
+ border-top: 1px solid @subtle; /* Optional: Add a border */
+    border-bottom : 1px solid @subtle; /* Optional: Add a border */
+
 }
 
 #workspaces,
@@ -181,13 +196,22 @@ tooltip {
 
 #custom-r_end {
     border-radius: 0px 21px 21px 0px;
+
+    border-top: 1px solid @subtle; /* Optional: Add a border */
+    border-right: 1px solid @subtle; /* Optional: Add a border */
+    border-bottom: 1px solid @subtle; /* Optional: Add a border */
     margin-right: 9px;
     padding-right: 0px;
 }
 
 #custom-l_end {
     border-radius: 21px 0px 0px 21px;
+    border-top: 1px solid @subtle; /* Optional: Add a border */
+    border-left: 1px solid @subtle; /* Optional: Add a border */
+    border-bottom: 1px solid @subtle; /* Optional: Add a border */
+    
     margin-left: 9px;
+
     padding-left: 0px;
 }
 

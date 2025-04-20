@@ -9,7 +9,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 export GPG_AGENT_INFO=$XDG_RUNTIME_DIR/keyring/gpg
 export SESSION_MANAGER=$XDG_RUNTIME_DIR/keyring
 
