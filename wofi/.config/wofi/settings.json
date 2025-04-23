@@ -1,0 +1,25 @@
+{
+	"prompt" : "Select settings" ,
+	"options": [
+		 {
+			 "option":"theme",
+			 "action":"nwg-look"
+		 },
+		 {
+			 "option":"network",
+			 "action":"nm-connection-editor"
+		 },
+		 {
+			 "option":"bluetooth",
+			 "action":"blueman-manager"
+		 },
+		 {
+			 "option":"passwords & keys",
+			 "action":"seahorse"
+		 },
+		 {
+			 "option":"nvidia",
+			 "action":"nvidia-settings"
+		 }
+	] 
+}

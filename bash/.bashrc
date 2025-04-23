@@ -1,7 +1,4 @@
-#
-# ~/.bashrc
-#
-
+#~/.bashrc
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -15,17 +12,12 @@ export SESSION_MANAGER=$XDG_RUNTIME_DIR/keyring
 
 export PATH=$PATH:~/.local/share/script
 export PATH=$PATH:~/.config/wofi
+export PATH=$PATH:~/.dotnet/tools
 
-#if [ -z "$SSH_AUTH_SOCK" ]; then
-# eval "$(ssh-agent -s)"
-# #fi
-# Start GNOME Keyring if not running
-# if ! pgrep -x "keyring-daemon" > /dev/null; then
-#     /usr/bin/gnome-keyring-daemon --start --components=ssh
-#     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
-# fi
 
-# Add SSH key if not already added
-# if ! ssh-add -l &>/dev/null; then
-#     ssh-add ~/.ssh/github
-# fi
+export BLENDER_PYTHON_PATH=/usr/bin/python3.13
+export BLENDER_PYTHON_LIB_PATH=/usr/share/blender/4.4/scripts/modules/
+export BLENDER_PYTHON_BL_OPERATORS=/usr/share/blender/4.4/scripts/startup/
+
+
+PS1='\[\e[32m\]\w \[\e[33m\] \[\e[0m\]'

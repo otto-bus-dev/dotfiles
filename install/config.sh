@@ -7,6 +7,7 @@ sudo ln -s ~/dotfiles/greetd/config.toml /etc/greetd/
 sudo rm /etc/default/grub
 sudo ln -s ~/dotfiles/grub/grub /etc/default/
 
+dotnet tool install -g csharpier
 
 cd ~/dotfiles
 stow bash
@@ -17,5 +18,6 @@ stow wofi
 stow swaync
 stow kitty
 stow brave
+stow nvim
 cd ~
 

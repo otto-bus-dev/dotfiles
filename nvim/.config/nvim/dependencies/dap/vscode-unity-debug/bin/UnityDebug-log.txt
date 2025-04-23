@@ -1,0 +1,62 @@
+21:30:48.556465: Log
+---
+
+21:30:48.563216: UnityDebug
+21:30:48.565067: Running session
+21:30:48.578057: Constructing UnityDebugSession
+21:30:48.583658: Done constructing UnityDebugSession
+21:30:48.711368: Command: initialize: {
+  "locale": "en_US.UTF-8",
+  "clientID": "neovim",
+  "clientName": "neovim",
+  "adapterID": "nvim-dap",
+  "pathFormat": "path",
+  "columnsStartAt1": true,
+  "linesStartAt1": true,
+  "supportsRunInTerminalRequest": true,
+  "supportsVariableType": true,
+  "supportsProgressReporting": true,
+  "supportsStartDebuggingRequest": true
+}
+21:30:48.749946: Command: attach: {
+  "name": "Unity Editor",
+  "request": "attach",
+  "type": "unity"
+}
+21:30:48.751431: UnityDebug: Attach: VSCodeDebug.Response ; {
+  "name": "Unity Editor",
+  "request": "attach",
+  "type": "unity"
+}
+21:30:48.760800: UnityDebug: SetExceptionBreakpoints: 
+21:30:48.761192: UnityDebug: Searching for Unity process 'Unity Editor'
+21:30:48.762774: Trying to find all Editor
+21:30:48.793436: Setting up multicast option: 225.0.0.222: 54997
+21:30:48.793566: Setting up multicast option: 225.0.0.222: 34997
+21:30:48.793620: Setting up multicast option: 225.0.0.222: 57997
+21:30:48.793664: Setting up multicast option: 225.0.0.222: 58997
+21:30:48.793710: Setting up multicast option: 225.0.0.222: 54997
+21:30:48.793753: Setting up multicast option: 225.0.0.222: 34997
+21:30:48.793796: Setting up multicast option: 225.0.0.222: 57997
+21:30:48.793838: Setting up multicast option: 225.0.0.222: 58997
+21:30:48.934513: Unity Editor process: Unity on id: 113101
+21:30:48.944753: Found Unity process: Unity Editor (Unity) (113101)
+21:30:48.945830: UnityDebug: Connect to: 127.0.0.1:56101
+21:30:48.946302: UnityDebug: Attached to Unity process 'Unity Editor (Unity)' (113101)
+21:30:48.946895: Command: setExceptionBreakpoints: {
+  "filters": []
+}
+21:30:48.947319: UnityDebug: StepIn: VSCodeDebug.Response ; {
+  "filters": []
+}
+21:30:48.948122: UnityDebug: SetExceptionBreakpoints: 
+21:32:12.139910: Command: disconnect: {
+  "restart": false,
+  "terminateDebuggee": false
+}
+21:32:12.140822: UnityDebug: Disconnect: {
+  "restart": false,
+  "terminateDebuggee": false
+}
+21:32:12.140898: UnityDebug: Disconnect: VSCodeDebug.Response
+21:32:12.142560: Session Terminated

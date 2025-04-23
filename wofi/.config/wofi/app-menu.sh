@@ -28,11 +28,13 @@ done < <(jq -c '.options[]' "$CONFIG_FILE")
 
 # Calculate the height of the menu based on the number of options
 num_options=$(jq '.options | length' "$CONFIG_FILE")
-menu_height=$((num_options * 50)) # Adjust 50 to fit your desired row height
+menu_height=$((50 +  num_options * 35)) # Adjust 50 to fit your desired row height
 
 # Use wofi in dmenu mode to let the user select an option
 selection=$(echo -e "$options" | wofi --dmenu --gtk-layer-shell --height "$menu_height" --width 200 --prompt "$prompt" )
 
+pkill -SIGUSR1 waybar
+rm -f "$LOCKFILE"
 # Take action based on the selection
 if [[ -n "$selection" ]] && [[ -n "${actions[$selection]}" ]]; then
   # Execute the action associated with the selected option
@@ -40,5 +42,3 @@ if [[ -n "$selection" ]] && [[ -n "${actions[$selection]}" ]]; then
 else
   echo "No valid option selected."
 fi
-pkill -SIGUSR1 waybar
-rm -f "$LOCKFILE"

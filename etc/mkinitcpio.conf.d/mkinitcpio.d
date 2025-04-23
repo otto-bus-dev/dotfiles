@@ -1,0 +1,1 @@
+/home/otto/dotfiles/etc/mkinitcpio.d

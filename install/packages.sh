@@ -9,14 +9,10 @@ SYSTEM_UTILITIES=(
 	nvidia-utils
 	nvidia-settings
 	nvidia-dkms
-	jq
-	stow
-	tmux
-	lazygit
 )
 
 DESKTOP=(
-	greetd
+  greetd
 	hyprland-git
 	hyprlock
 	hypridle
@@ -32,14 +28,39 @@ DESKTOP=(
 	xdg-desktop-portal-hyprland
 	nautilus
 	rose-pine-gtk-theme-full
+  xclip
 )
 
 APPS=(
 	brave-bin
-	neovim
 	obsidian
+  blender
+  unityhub
+  thunderbird
 )
 
+TOOLS=(
+	neovim
+	tmux
+  nodejs
+  npm
+	lazygit
+	jq
+	stow
+  luarocks
+  lua51
+  python-pip
+  python-pynvim
+  python-debugpy
+  lynx
+  dotnet-sdk
+  dotnet-runtime-9.0
+  aspnet-runtime-9.0
+  stylua
+  prettier
+  fd
+  imagemagick
+)
 install_packages(){
 	local packages=("$@")
 	echo "${packages[@]}"
@@ -51,5 +72,5 @@ install_packages(){
 install_packages "${SYSTEM_UTILITIES[@]}"
 install_packages "${DESKTOP[@]}"
 install_packages "${APPS[@]}"
-
+install_packages "${TOOLS[@]}"
 

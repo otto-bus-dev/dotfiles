@@ -1,21 +1,37 @@
 {
-	"prompt" : "Select an app" ,
-	"options": [
-		 {
-			 "option":"brave",
-			 "action":"brave"
-		 },
-		 {
-			 "option":"files",
-			 "action":"nautilus"
-		 },
-		 {
-			 "option":"kitty",
-			 "action":"kitty"
-		 },
-		 {
-			 "option":"obsidian",
-			 "action":"obsidian"
-		 }
-	] 
+  "prompt": "Select an app",
+  "options": [
+    {
+      "option": "brave",
+      "action": "brave"
+    },
+    {
+      "option": "blender",
+      "action": "blender --python-expr \"import debugpy; debugpy.listen(('0.0.0.0', 5678)); debugpy.wait_for_client(); print('Blender is waiting for debugger to attach')\""
+    },
+    {
+      "option": "files",
+      "action": "nautilus"
+    },
+    {
+      "option": "kitty",
+      "action": "kitty"
+    },
+    {
+      "option": "obsidian",
+      "action": "obsidian"
+    },
+    {
+      "option": "thunderbird",
+      "action": "thunderbird"
+    },
+    {
+      "option": "vlc",
+      "action": "vlc"
+    },
+    {
+      "option": "unity",
+      "action": "unityhub"
+    }
+  ]
 }
