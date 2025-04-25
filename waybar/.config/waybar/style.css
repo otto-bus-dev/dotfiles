@@ -1,17 +1,18 @@
 * {
-    border: none;
-    border-radius: 0px;
-    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Hack Nerd Font";
-    font-weight: bold;
-    font-size: 12px;
-    min-height: 10px;
-    opacity:0.95;
+  border: none;
+  border-radius: 0px;
+  font-family:
+    "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Hack Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+  min-height: 10px;
+  opacity: 0.95;
 }
 
 @import "theme.css";
 
 window#waybar {
-    background: @bar-bg;
+  background: @bar-bg;
 }
 
 /* tooltip { */
@@ -21,117 +22,115 @@ window#waybar {
 /*     border-width: 0px; */
 /* } */
 tooltip {
-    border-radius: 8px; /* Rounded corners */
-    background-color: @base; /* Semi-transparent black background */
-    color: @text; /* Text color */
-    padding: 10px; /* Add padding to the tooltip */
-    font-size: 12px; /* Adjust font size */
-    border: 1px solid @subtle; /* Optional: Add a border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: @base; /* Semi-transparent black background */
+  color: @text; /* Text color */
+  padding: 10px; /* Add padding to the tooltip */
+  font-size: 12px; /* Adjust font size */
+  border: 1px solid @subtle; /* Optional: Add a border */
 }
 
 #workspaces button {
-    box-shadow: none;
-    text-shadow: none;
-    padding: 0px;
-    border-radius: 9px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 0px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin-right: 5px;
-    color: @text;
-    animation: ws_normal 20s ease-in-out 1;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 9px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 0px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-right: 5px;
+  color: @text;
+  animation: ws_normal 20s ease-in-out 1;
 }
 #workspaces button:last-child {
-	margin-right: 0px
+  margin-right: 0px;
 }
-#workspaces button.visible{
-    background: @text;
-    color: @base;
-    padding-left: 8px;
-    padding-right: 8px;
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+#workspaces button.visible {
+  background: @text;
+  color: @base;
+  padding-left: 8px;
+  padding-right: 8px;
+  animation: ws_hover 20s ease-in-out 1;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #workspaces button.active {
-	
-    background: @foam;
-    color: @base;
-    padding-left: 8px;
-    padding-right: 8px;
-    animation: ws_active 20s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55, -0.68, .48, 1.682);
+  background: @foam;
+  color: @base;
+  padding-left: 8px;
+  padding-right: 8px;
+  animation: ws_active 20s ease-in-out 1;
+  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #workspaces button:hover {
-    background: @gold;
-    color: @base;
-    padding-left: 8px;
-    padding-right: 8px;
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+  background: @gold;
+  color: @base;
+  padding-left: 8px;
+  padding-right: 8px;
+  animation: ws_hover 20s ease-in-out 1;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #window {
-    box-shadow: none;
-    text-shadow: none;
-    padding: 0px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-left: 0px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin-right: 0px;
-    background: @base;
-    color: @text;
-    animation: ws_normal 20s ease-in-out 1;
-    
-    border-top: 1px solid @subtle; /* Optional: Add a border */
-    border-bottom : 1px solid @subtle; /* Optional: Add a border */
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 0px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-right: 0px;
+  background: @base;
+  color: @text;
+  animation: ws_normal 20s ease-in-out 1;
+
+  border-top: 1px solid @subtle; /* Optional: Add a border */
+  border-bottom: 1px solid @subtle; /* Optional: Add a border */
 }
 
-
 #taskbar button {
-    box-shadow: none;
-    text-shadow: none;
-    padding: 0px;
-    border-radius: 9px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 0px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin-right: 0px;
-    color: @text;
-    animation: tb_normal 20s ease-in-out 1;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 9px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 0px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-right: 0px;
+  color: @text;
+  animation: tb_normal 20s ease-in-out 1;
 }
 
 #taskbar button.active {
-    background: @foam;
-    color: @base;
-    margin-left: 3px;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-right: 3px;
-    animation: tb_active 20s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55, -0.68, .48, 1.682);
+  background: @foam;
+  color: @base;
+  margin-left: 3px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 3px;
+  animation: tb_active 20s ease-in-out 1;
+  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #taskbar button:hover {
-    background: @gold;
-    color: @base;
-    animation: tb_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+  background: @gold;
+  color: @base;
+  animation: tb_hover 20s ease-in-out 1;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #tray menu * {
-    min-height: 16px
+  min-height: 16px;
 }
 
 #tray menu separator {
-    min-height: 10px
+  min-height: 10px;
 }
 
 #backlight,
@@ -139,6 +138,7 @@ tooltip {
 #bluetooth,
 #custom-cava,
 #custom-cliphist,
+#custom-mail,
 #clock,
 #clock,
 #custom-cpuinfo,
@@ -178,63 +178,62 @@ tooltip {
 #custom-sr_end,
 #custom-rl_end,
 #custom-rr_end {
-    color: @text;
-    background: @base;
-    opacity: 1;
-    margin: 4px 0px 4px 0px;
-    padding-left: 4px;
-    padding-right: 4px;
- border-top: 1px solid @subtle; /* Optional: Add a border */
-    border-bottom : 1px solid @subtle; /* Optional: Add a border */
-
+  color: @text;
+  background: @base;
+  opacity: 1;
+  margin: 4px 0px 4px 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-top: 1px solid @subtle; /* Optional: Add a border */
+  border-bottom: 1px solid @subtle; /* Optional: Add a border */
 }
 
 #workspaces,
 #taskbar {
-    padding: 0px;
+  padding: 0px;
 }
 
 #custom-r_end {
-    border-radius: 0px 21px 21px 0px;
+  border-radius: 0px 21px 21px 0px;
 
-    border-top: 1px solid @subtle; /* Optional: Add a border */
-    border-right: 1px solid @subtle; /* Optional: Add a border */
-    border-bottom: 1px solid @subtle; /* Optional: Add a border */
-    margin-right: 9px;
-    padding-right: 0px;
+  border-top: 1px solid @subtle; /* Optional: Add a border */
+  border-right: 1px solid @subtle; /* Optional: Add a border */
+  border-bottom: 1px solid @subtle; /* Optional: Add a border */
+  margin-right: 9px;
+  padding-right: 0px;
 }
 
 #custom-l_end {
-    border-radius: 21px 0px 0px 21px;
-    border-top: 1px solid @subtle; /* Optional: Add a border */
-    border-left: 1px solid @subtle; /* Optional: Add a border */
-    border-bottom: 1px solid @subtle; /* Optional: Add a border */
-    
-    margin-left: 9px;
+  border-radius: 21px 0px 0px 21px;
+  border-top: 1px solid @subtle; /* Optional: Add a border */
+  border-left: 1px solid @subtle; /* Optional: Add a border */
+  border-bottom: 1px solid @subtle; /* Optional: Add a border */
 
-    padding-left: 0px;
+  margin-left: 9px;
+
+  padding-left: 0px;
 }
 
 #custom-sr_end {
-    border-radius: 0px;
-    margin-right: 9px;
-    padding-right: 3px;
+  border-radius: 0px;
+  margin-right: 9px;
+  padding-right: 3px;
 }
 
 #custom-sl_end {
-    border-radius: 0px;
-    margin-left: 9px;
-    padding-left: 3px;
+  border-radius: 0px;
+  margin-left: 9px;
+  padding-left: 3px;
 }
 
 #custom-rr_end {
-    border-radius: 0px 7px 7px 0px;
-    margin-right: 9px;
-    padding-right: 3px;
+  border-radius: 0px 7px 7px 0px;
+  margin-right: 9px;
+  padding-right: 3px;
 }
 
 #custom-rl_end {
-    border-radius: 7px 0px 0px 7px;
-    margin-left: 9px;
-    padding-left: 3px;
+  border-radius: 7px 0px 0px 7px;
+  margin-left: 9px;
+  padding-left: 3px;
 }
