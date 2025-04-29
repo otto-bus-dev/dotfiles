@@ -2,36 +2,44 @@
   "prompt": "Select an app",
   "options": [
     {
-      "option": "brave",
+      "option": "󰖟 brave",
       "action": "brave"
     },
     {
-      "option": "blender",
-      "action": "blender --python-expr \"import debugpy; debugpy.listen(('0.0.0.0', 5678)); debugpy.wait_for_client(); print('Blender is waiting for debugger to attach')\""
+      "option": "󰂫 blender",
+      "action": "blender"
     },
     {
-      "option": "files",
+      "option": " files",
       "action": "nautilus"
     },
     {
-      "option": "kitty",
+      "option": "󰄛 kitty",
       "action": "kitty"
     },
     {
-      "option": "obsidian",
+      "option": " obsidian",
       "action": "obsidian"
     },
     {
-      "option": "thunderbird",
+      "option": " thunderbird",
       "action": "thunderbird"
     },
     {
-      "option": "vlc",
+      "option": "󰕼 vlc",
       "action": "vlc"
     },
     {
-      "option": "unity",
+      "option": " unity",
       "action": "unityhub"
+    },
+    {
+      "option": " scratch",
+      "action": "scratch"
+    },
+    {
+      "option": "󰣳 nas",
+      "action": "brave https://192-168-86-24.otto-bus-dev.direct.quickconnect.to:5001/"
     }
   ]
 }

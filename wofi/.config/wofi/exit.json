@@ -1,17 +1,17 @@
 {
-	"prompt" : "Select an option" ,
-	"options": [
-		 {
-			 "option":"lock",
-			 "action":"pidof hyprlock || hyprlock"
-		 },
-		 {
-			 "option":"reboot",
-			 "action":"reboot"
-		 },
-		 {
-			 "option":"shutdown",
-			 "action":"shutdown -h now"
-		 }
-	] 
+  "prompt": "Select an option",
+  "options": [
+    {
+      "option": " lock",
+      "action": "pidof hyprlock || hyprlock"
+    },
+    {
+      "option": " reboot",
+      "action": "reboot"
+    },
+    {
+      "option": " shutdown",
+      "action": "shutdown -h now"
+    }
+  ]
 }

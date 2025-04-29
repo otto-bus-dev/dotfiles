@@ -29,6 +29,7 @@ DESKTOP=(
 	nautilus
 	rose-pine-gtk-theme-full
   xclip
+  wdisplays
 )
 
 APPS=(
@@ -37,6 +38,7 @@ APPS=(
   blender
   unityhub
   thunderbird
+  scratch
 )
 
 TOOLS=(
@@ -60,6 +62,8 @@ TOOLS=(
   prettier
   fd
   imagemagick
+  electron
+  nfs-utils
 )
 install_packages(){
 	local packages=("$@")

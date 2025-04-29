@@ -1,0 +1,801 @@
+{
+    "state": {
+        "DL26L2A80295": {
+            "buttons": {
+                "0": {
+                    "0": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\udb80\udd1b ",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "kitty",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle",
+                                "text_horizontal_align": "right",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#f6c177",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "1": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": " \ue6ae ",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#9ccfd8",
+                                "font_size": 51,
+                                "background_color": "#232136"
+                            },
+                            "1": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": ""
+                            }
+                        }
+                    },
+                    "2": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\ue766",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "blender --python-expr \"import debugpy; debugpy.listen(('0.0.0.0', 5678)); debugpy.wait_for_client(); print('Blender is waiting for debugger to attach')\"",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#ea9a97",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "3": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\ue721",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "unityhub",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#e0def4",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "4": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\ueeed",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "scratch",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#ea9a97",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "5": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\udb81\udd9f",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "brave",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#eb6f92",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "6": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\uf370",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "thunderbird",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#3e8fb0",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "7": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\uf219",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "obsidian",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#c4a7e7",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "8": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\uf4d3",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "nautilus",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#e0def4",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "9": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\udb81\udd7c",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "vlc",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#ea9a97",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "10": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "11": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "12": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "13": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "14": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    }
+                },
+                "1": {
+                    "0": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\ueb5c",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "nwg-look",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#c4a7e7",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "1": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\udb81\udef3",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "nm-connection-editor",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#e0def4",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "2": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\udb80\udcaf",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "blueman-manager",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#3e8fb0",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "3": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\udb81\udff5",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "seahorse",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#eb6f92",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "4": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\uec19",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "nvidia-settings",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#9ccfd8",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "5": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\udb80\udf79",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "wdisplays",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#f6c177",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "6": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\ue638",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "pavucontrol",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#3e8fb0",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "7": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "8": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "9": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "10": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "11": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "12": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "13": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "14": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    }
+                }
+            },
+            "display_timeout": 1800,
+            "brightness": 43,
+            "brightness_dimmed": 0,
+            "rotation": 0,
+            "page": 0
+        },
+        "BL46L2B02976": {
+            "buttons": {
+                "0": {
+                    "0": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\uf0bd",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 1,
+                                "switch_state": 1,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#9ccfd8",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "1": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "2": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "3": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "\uf013",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 2,
+                                "switch_state": 2,
+                                "text_vertical_align": "middle-bottom",
+                                "text_horizontal_align": "",
+                                "font": "/home/otto/.local/share/fonts/HackNerdFont-Regular.ttf",
+                                "font_color": "#e0def4",
+                                "font_size": 50,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "4": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    },
+                    "5": {
+                        "state": 0,
+                        "states": {
+                            "0": {
+                                "text": "",
+                                "icon": "",
+                                "keys": "",
+                                "write": "",
+                                "command": "",
+                                "brightness_change": 0,
+                                "switch_page": 0,
+                                "switch_state": 0,
+                                "text_vertical_align": "",
+                                "text_horizontal_align": "",
+                                "font": "",
+                                "font_color": "",
+                                "font_size": 0,
+                                "background_color": "#232136"
+                            }
+                        }
+                    }
+                }
+            },
+            "display_timeout": 1800,
+            "brightness": 100,
+            "brightness_dimmed": 0,
+            "rotation": 0,
+            "page": 0
+        }
+    },
+    "streamdeck_ui_version": 2
+}
