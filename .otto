@@ -1,0 +1,4 @@
+{
+  "option":"dotfiles",
+  "action":"kitty -e lazygit -p ~/dotfiles/"
+}

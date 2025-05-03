@@ -26,6 +26,6 @@ while true; do
     # sudo mkinitcpio -P linux
 
     # Reload the wallpaper in Hyprpaper
-    hyprctl hyprpaper reload ,"$TARGET_DIR$TARGET_FILE"
+    hyprctl hyprpaper reload "$TARGET_DIR$TARGET_FILE"
 
 done

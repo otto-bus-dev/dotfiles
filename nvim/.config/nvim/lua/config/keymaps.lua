@@ -8,10 +8,11 @@ vim.api.nvim_set_keymap("n", "<Leader>n", ":set relativenumber!<CR>", { noremap 
 vim.api.nvim_set_keymap("n", "<Leader>N", ":set nu! relativenumber!<CR>", { noremap = true, silent = true })
 
 -- Go to File (find file using fuzzy finder like `telescope`)
-vim.api.nvim_set_keymap("n", "<Leader>ff", ":Telescope find_files<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>ff", ":Telescope find_files<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>fp", ":Telescope project<cr>", { noremap = true, silent = true })
 
 -- Go to Line (find text using fuzzy search with `telescope`)
-vim.api.nvim_set_keymap("n", "<Leader>g", ":Telescope live_grep<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>fg", ":Telescope live_grep<CR>", { noremap = true, silent = true })
 
 -- Buffer Navigation (next/previous buffer)
 vim.api.nvim_set_keymap("n", "<Leader>bn", ":bnext<CR>", { noremap = true, silent = true })
@@ -28,10 +29,10 @@ vim.api.nvim_set_keymap("n", "<Leader>k", "<C-w>k", { noremap = true, silent = t
 vim.api.nvim_set_keymap("n", "<Leader>l", "<C-w>l", { noremap = true, silent = true }) -- Right window
 
 -- Resize Windows
-vim.api.nvim_set_keymap("n", "<C-Left>", "<C-w><", { noremap = true, silent = true }) -- Resize left
+vim.api.nvim_set_keymap("n", "<C-Left>", "<C-w><", { noremap = true, silent = true })  -- Resize left
 vim.api.nvim_set_keymap("n", "<C-Right>", "<C-w>>", { noremap = true, silent = true }) -- Resize right
-vim.api.nvim_set_keymap("n", "<C-Up>", "<C-w>+", { noremap = true, silent = true }) -- Resize up
-vim.api.nvim_set_keymap("n", "<C-Down>", "<C-w>-", { noremap = true, silent = true }) -- Resize down
+vim.api.nvim_set_keymap("n", "<C-Up>", "<C-w>+", { noremap = true, silent = true })    -- Resize up
+vim.api.nvim_set_keymap("n", "<C-Down>", "<C-w>-", { noremap = true, silent = true })  -- Resize down
 
 -- Go to Definition (with LSP)
 vim.api.nvim_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
@@ -59,13 +60,13 @@ vim.api.nvim_set_keymap("v", "<leader><F2>", '<cmd>lua require"dapui".eval()<CR>
 vim.api.nvim_set_keymap("n", "<Leader>q", ":copen<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>db", ':lua require"dapui".toggle()<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>bd", function()
-	vim.loop.spawn("blender", {
-		args = {
-			"--python-expr",
-			"import debugpy; debugpy.listen(('0.0.0.0', 5678)); debugpy.wait_for_client(); print('Blender is waiting for debugger to attach')",
-		},
-		detached = true,
-	}, function() end)
+  vim.loop.spawn("blender", {
+    args = {
+      "--python-expr",
+      "import debugpy; debugpy.listen(('0.0.0.0', 5678)); debugpy.wait_for_client(); print('Blender is waiting for debugger to attach')",
+    },
+    detached = true,
+  }, function() end)
 end, { desc = "Start Blender with Debugpy" })
 
 -- Open Neovim’s Help
@@ -97,45 +98,45 @@ vim.api.nvim_set_keymap("n", "<Leader>tf", ":Neotree focus<CR>", { noremap = tru
 
 -- Function to source Neovim configuration
 function _G.source_config()
-	vim.cmd("source " .. vim.fn.stdpath("config") .. "/init.lua")
-	vim.notify("Configuration sourced!", vim.log.levels.INFO)
+  vim.cmd("source " .. vim.fn.stdpath("config") .. "/init.lua")
+  vim.notify("Configuration sourced!", vim.log.levels.INFO)
 end
 
 -- Keybinding to source Neovim configuration
 vim.api.nvim_set_keymap("n", "<Leader>s", ":lua _G.source_config()<CR>", { noremap = true, silent = true })
 
 -- Plugin management
-vim.api.nvim_set_keymap("n", "<Leader>L", ":Lazy<CR>", { noremap = true, silent = true }) -- Undo
+vim.api.nvim_set_keymap("n", "<Leader>L", ":Lazy<CR>", { noremap = true, silent = true })  -- Undo
 vim.api.nvim_set_keymap("n", "<Leader>M", ":Mason<CR>", { noremap = true, silent = true }) -- Redo
 
 local wk = require("which-key")
 -- Register which-key descriptions
 wk.add({
-	{ "<Leader>?", desc = "Open Help" },
-	{ "<Leader>L", desc = "Open Lazy" },
-	{ "<Leader>M", desc = "Open Mason" },
-	{ "<Leader>bn", desc = "Next Buffer" },
-	{ "<Leader>bp", desc = "Previous Buffer" },
-	{ "<Leader>c", group = " Copilot" },
-	{ "<Leader>cc", desc = "Toggle Copilot Chat" },
-	{ "<Leader>ch", desc = "Clear Copilot Chat History" },
-	{ "<Leader>co", desc = "Open Copilot Chat" },
-	{ "<Leader>du", desc = "Toggle DAP UI" },
-	{ "<Leader>ff", desc = "Find File" },
-	{ "<Leader>g", desc = "Live Grep" },
-	{ "<Leader>h", desc = "Left Window" },
-	{ "<Leader>j", desc = "Below Window" },
-	{ "<Leader>k", desc = "Above Window" },
-	{ "<Leader>l", desc = "Right Window" },
-	{ "<Leader>n", desc = "Toggle Line Numbers" },
-	{ "<Leader>p", desc = "Paste from Clipboard" },
-	{ "<Leader>q", desc = "Quit" },
-	{ "<Leader>s", desc = "Source Configuration" },
-	{ "<Leader>t", group = " NeoTree" },
-	{ "<Leader>tf", desc = "Focus NeoTree" },
-	{ "<Leader>tt", desc = "Toggle NeoTree" },
-	{ "<Leader>u", desc = "Undo" },
-	{ "<Leader>w", desc = "Save" },
-	{ "<Leader>x", desc = "Save and Quit" },
-	{ "<Leader>y", desc = "Yank to Clipboard" },
+  { "<Leader>?",  desc = "Open Help" },
+  { "<Leader>L",  desc = "Open Lazy" },
+  { "<Leader>M",  desc = "Open Mason" },
+  { "<Leader>bn", desc = "Next Buffer" },
+  { "<Leader>bp", desc = "Previous Buffer" },
+  { "<Leader>c",  group = " Copilot" },
+  { "<Leader>cc", desc = "Toggle Copilot Chat" },
+  { "<Leader>ch", desc = "Clear Copilot Chat History" },
+  { "<Leader>co", desc = "Open Copilot Chat" },
+  { "<Leader>du", desc = "Toggle DAP UI" },
+  { "<Leader>ff", desc = "Find File" },
+  { "<Leader>g",  desc = "Live Grep" },
+  { "<Leader>h",  desc = "Left Window" },
+  { "<Leader>j",  desc = "Below Window" },
+  { "<Leader>k",  desc = "Above Window" },
+  { "<Leader>l",  desc = "Right Window" },
+  { "<Leader>n",  desc = "Toggle Line Numbers" },
+  { "<Leader>p",  desc = "Paste from Clipboard" },
+  { "<Leader>q",  desc = "Quit" },
+  { "<Leader>s",  desc = "Source Configuration" },
+  { "<Leader>t",  group = " NeoTree" },
+  { "<Leader>tf", desc = "Focus NeoTree" },
+  { "<Leader>tt", desc = "Toggle NeoTree" },
+  { "<Leader>u",  desc = "Undo" },
+  { "<Leader>w",  desc = "Save" },
+  { "<Leader>x",  desc = "Save and Quit" },
+  { "<Leader>y",  desc = "Yank to Clipboard" },
 })

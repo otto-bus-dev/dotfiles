@@ -4,7 +4,7 @@
   font-family:
     "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Hack Nerd Font";
   font-weight: bold;
-  font-size: 12px;
+  font-size: 16px;
   min-height: 10px;
   opacity: 0.95;
 }
@@ -22,7 +22,7 @@ window#waybar {
 /*     border-width: 0px; */
 /* } */
 tooltip {
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 12px; /* Rounded corners */
   background-color: @base; /* Semi-transparent black background */
   color: @text; /* Text color */
   padding: 10px; /* Add padding to the tooltip */
@@ -96,7 +96,7 @@ tooltip {
   box-shadow: none;
   text-shadow: none;
   padding: 0px;
-  border-radius: 9px;
+  border-radius: 12px;
   margin-top: 3px;
   margin-bottom: 3px;
   margin-left: 0px;
