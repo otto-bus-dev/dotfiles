@@ -9,6 +9,8 @@ SYSTEM_UTILITIES=(
 	nvidia-utils
 	nvidia-settings
 	nvidia-dkms
+  cups
+  brother-mfc-j5330dw
 )
 
 DESKTOP=(
@@ -30,6 +32,7 @@ DESKTOP=(
 	rose-pine-gtk-theme-full
   xclip
   wdisplays
+  brightnessctl
 )
 
 APPS=(

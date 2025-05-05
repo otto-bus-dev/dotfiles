@@ -3,15 +3,15 @@
   "options": [
     {
       "option": " lock",
-      "action": "pidof hyprlock || hyprlock"
+      "action": "$HOME/.local/share/script/lockscreen.sh"
     },
     {
       "option": " reboot",
-      "action": "reboot"
+      "action": "$HOME/.local/share/script/on-reboot.sh"
     },
     {
       "option": " shutdown",
-      "action": "shutdown -h now"
+      "action": "$HOME/.local/share/script/on-shutdown.sh"
     }
   ]
 }
