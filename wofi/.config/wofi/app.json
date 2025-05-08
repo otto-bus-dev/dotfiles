@@ -40,6 +40,10 @@
     {
       "option": "󰣳 nas",
       "action": "brave https://192-168-86-24.otto-bus-dev.direct.quickconnect.to:5001/"
+    },
+    {
+      "option": " virtualbox",
+      "action": "virtualbox"
     }
   ]
 }

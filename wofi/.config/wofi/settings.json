@@ -7,11 +7,11 @@
     },
     {
       "option": "󰛳 network",
-      "action": "nm-connection-editor"
+      "action": "kitty nmtui"
     },
     {
       "option": "󰂯 bluetooth",
-      "action": "blueman-manager"
+      "action": "kitty bluetuith"
     },
     {
       "option": "󰟵 passwords & keys",
@@ -27,7 +27,7 @@
     },
     {
       "option": " sound",
-      "action": "pavucontrol"
+      "action": "kitty alsamixer"
     },
     {
       "option": " stream-deck",

@@ -17,6 +17,11 @@ fi
 # Wait for hyprlock to exit (indicating unlock)
 wait $!
 
+# Ensure hyprlock is no longer running
+while pgrep hyprlock > /dev/null; do
+    sleep 0.1
+done
+
 # Call the unlock command
 /home/otto/.local/share/script/unlockscreen.sh
 

@@ -4,13 +4,17 @@ SYSTEM_UTILITIES=(
 	nm-connection-editor
 	bluez
 	bluez-utils
-	blueman
+  bluez-obex
+	bluetuith
 	nvidia-open
 	nvidia-utils
 	nvidia-settings
 	nvidia-dkms
   cups
   brother-mfc-j5330dw
+  pipewire
+  pipewire-pulse
+  wireplumber
 )
 
 DESKTOP=(
@@ -67,6 +71,8 @@ TOOLS=(
   imagemagick
   electron
   nfs-utils
+  virtualbox
+  virtualbox-host-modules-arch
 )
 install_packages(){
 	local packages=("$@")
