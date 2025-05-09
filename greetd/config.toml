@@ -8,8 +8,7 @@ vt = 1
 
 # `agreety` is the bundled agetty/login-lookalike. You can replace `/bin/sh`
 # with whatever you want started, such as `sway`.
-
-
+#command = "Hyprland > /dev/null 2>&1"
 command = "/home/otto/.local/share/script/start-hyprland.sh"
 
 # The user to run the command as. The privileges this user must have depends

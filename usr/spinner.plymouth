@@ -43,7 +43,7 @@ ModuleName=two-step
 [two-step]
 Font=JetBrainsMono Medium 12
 TitleFont=JetBrainsMono Medium 30
-ImageDir=/usr/share/plymouth/themes/spinner
+ImageDir=/usr/share/plymouth/themes//spinner
 DialogHorizontalAlignment=.5
 DialogVerticalAlignment=.382
 TitleHorizontalAlignment=.5
@@ -62,15 +62,12 @@ MessageBelowAnimation=true
 
 [boot-up]
 UseEndAnimation=false
-UseFirmwareBackground=false
 
 [shutdown]
 UseEndAnimation=false
-UseFirmwareBackground=false
 
 [reboot]
 UseEndAnimation=false
-UseFirmwareBackground=false
 
 [updates]
 SuppressMessages=true
@@ -78,9 +75,6 @@ ProgressBarShowPercentComplete=true
 UseProgressBar=true
 Title=Installing Updates...
 SubTitle=Do not turn off your computer
-UseFirmwareBackground=false
-
-
 
 [system-upgrade]
 SuppressMessages=true
@@ -88,8 +82,6 @@ ProgressBarShowPercentComplete=true
 UseProgressBar=true
 Title=Upgrading System...
 SubTitle=Do not turn off your computer
-UseFirmwareBackground=false
-
 
 [firmware-upgrade]
 SuppressMessages=true
@@ -97,8 +89,6 @@ ProgressBarShowPercentComplete=true
 UseProgressBar=true
 Title=Upgrading Firmware...
 SubTitle=Do not turn off your computer
-UseFirmwareBackground=false
-
 
 [system-reset]
 SuppressMessages=true
@@ -106,6 +96,3 @@ ProgressBarShowPercentComplete=true
 UseProgressBar=true
 Title=Resetting System...
 SubTitle=Do not turn off your computer
-UseFirmwareBackground=false
-
-
