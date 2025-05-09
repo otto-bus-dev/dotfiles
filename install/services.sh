@@ -8,3 +8,6 @@ systemctl --user enable --now hyprpaper.service
 # systemctl --user start pipewire.service
 # systemctl --user enable wireplumber.service
 # systemctl --user start wireplumber.service
+systemctl enable NetworkManager 
+systemctl start NetworkManager 
+sudo systemctl enable plymouth-start.service

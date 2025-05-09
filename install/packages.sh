@@ -40,6 +40,10 @@ DESKTOP=(
   brightnessctl
   wofi
   plymouth
+  streamdeck-ui
+  seahorse
+  networkmanager
+  alsa-utils
 )
 
 APPS=(
@@ -49,6 +53,7 @@ APPS=(
   unityhub
   thunderbird
   scratch
+  vlc
 )
 
 TOOLS=(

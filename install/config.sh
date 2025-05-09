@@ -9,7 +9,14 @@ sudo rm /etc/default/grub
 sudo ln -s ~/dotfiles/etc/grub /etc/default/grub
 sudo rm /usr/share/plymouth/themes/spinner/spinner.plymouth
 sudo ln -s ~/dotfiles/usr/spinner.plymouth /usr/share/plymouth/themes/spinner/spinner.plymouth
+sudo rm /usr/share/plymouth/themes/spinner/watermark.png
 sudo ln -s ~/dotfiles/usr/watermark.png /usr/share/plymouth/themes/spinner/watermark.png
+sudo rm /etc/plymouth/plymouthd.conf
+sudo ln -s ~/dotfiles/etc/plymouthd.conf /etc/plymouth/plymouthd.conf
+sudo rm /etc/mkinitcpio.conf
+sudo ln -s ~/dotfiles/etc/mkinitcpio.conf /etc/mkinitcpio.conf
+
+
 
 
 
@@ -30,3 +37,4 @@ stow tmux
 stow nvim
 cd ~
 
+sudo grub-mkconfig -o /boot/grub/grub.cfg
