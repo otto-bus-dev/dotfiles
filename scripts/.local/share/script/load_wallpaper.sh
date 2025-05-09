@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Directory containing wallpapers
-WALLPAPER_DIR="/home/otto/Pictures/Wallpapers/"
+WALLPAPER_DIR="/home/otto/.config/wallpapers/all/"
 
 # Directory where the wallpaper.png will be stored
-TARGET_DIR="/home/otto/Pictures/SelectedWallpaper/"
+TARGET_DIR="/home/otto/.config/wallpapers/selected/"
 TARGET_FILE="wallpaper.png"
 TARGET_BLUR_FILE="wallpaper_blur.png"
 #TARGET_SPLASH_SCREEN_BACKGROUND_PATH="/usr/share/plymouth/themes/spinner/background-tile.png"

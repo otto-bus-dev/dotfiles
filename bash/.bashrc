@@ -13,6 +13,8 @@ export SESSION_MANAGER=$XDG_RUNTIME_DIR/keyring
 export PATH=$PATH:~/.local/share/script
 export PATH=$PATH:~/.config/wofi
 export PATH=$PATH:~/.dotnet/tools
+export PATH=$PATH:~/.config/tmux
+
 
 
 export BLENDER_PYTHON_PATH=/usr/bin/python3.13

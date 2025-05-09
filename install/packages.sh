@@ -15,6 +15,7 @@ SYSTEM_UTILITIES=(
   pipewire
   pipewire-pulse
   wireplumber
+  openssh
 )
 
 DESKTOP=(
@@ -37,6 +38,8 @@ DESKTOP=(
   xclip
   wdisplays
   brightnessctl
+  wofi
+  plymouth
 )
 
 APPS=(
@@ -53,6 +56,7 @@ TOOLS=(
 	tmux
   nodejs
   npm
+  kitty
 	lazygit
 	jq
 	stow
