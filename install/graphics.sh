@@ -19,16 +19,14 @@ detect_gpu() {
 install_nvidia_driver() {
     echo "Installing NVIDIA drivers..."
     yay -S --noconfirm nvidia-open nvidia-utils	nvidia-settings nvidia-dkms
-  sudo rm /etc/mkinitcpio.conf
-  sudo ln -s ~/dotfiles/etc/mkinitcpio.nvidia.conf /etc/mkinitcpio.conf
+    sudo cp ~/dotfiles/etc/mkinitcpio.nvidia.conf /etc/mkinitcpio.conf
 }
 
 # Function to install Intel drivers
 install_intel_driver() {
     echo "Installing Intel drivers..."
     yay -S --noconfirm xf86-video-intel
-    sudo rm /etc/mkinitcpio.conf
-    sudo ln -s ~/dotfiles/etc/mkinitcpio.conf /etc/mkinitcpio.conf
+    sudo cp ~/dotfiles/etc/mkinitcpio.conf /etc/mkinitcpio.conf
 }
 
 # Main script logic
