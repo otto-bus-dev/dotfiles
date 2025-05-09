@@ -128,7 +128,7 @@
     "format-disconnected": "󰖪 ",
     "tooltip-format-disconnected": "Disconnected",
     "interval": 2,
-    "on-click": "nm-connection-editor",
+    "on-click": "kitty nmtui",
   },
   "battery": {
     "format": "{icon}",

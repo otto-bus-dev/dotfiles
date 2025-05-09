@@ -30,3 +30,4 @@ stow tmux
 stow nvim
 cd ~
 
+sudo grub-mkconfig -o /boot/grub/grub.cfg
