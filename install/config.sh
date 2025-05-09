@@ -13,11 +13,6 @@ sudo rm /usr/share/plymouth/themes/spinner/watermark.png
 sudo ln -s ~/dotfiles/usr/watermark.png /usr/share/plymouth/themes/spinner/watermark.png
 sudo rm /etc/plymouth/plymouthd.conf
 sudo ln -s ~/dotfiles/etc/plymouthd.conf /etc/plymouth/plymouthd.conf
-sudo rm /etc/mkinitcpio.conf
-sudo ln -s ~/dotfiles/etc/mkinitcpio.conf /etc/mkinitcpio.conf
-
-
-
 
 
 dotnet tool install -g csharpier
@@ -37,4 +32,5 @@ stow tmux
 stow nvim
 cd ~
 
+sudo mkinitcpio -P
 sudo grub-mkconfig -o /boot/grub/grub.cfg
