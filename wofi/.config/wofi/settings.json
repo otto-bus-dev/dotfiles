@@ -31,7 +31,7 @@
     },
     {
       "option": " stream-deck",
-      "action": "killall streamdeck || streamdeck"
+      "action": "~/.local/share/script/start_streamdeck_settings.sh"
     }
   ]
 }

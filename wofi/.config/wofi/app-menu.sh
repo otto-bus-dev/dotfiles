@@ -4,8 +4,6 @@ LOCKFILE="/tmp/wofi.lock"
 exec 200>"$LOCKFILE"
 flock -n 200 || exit 1
 
-
-pkill -SIGUSR1 waybar
 if [[ -n "$1" ]]; then
   CONFIG_FILE="$HOME/.config/wofi/$1.json"
 else
@@ -33,7 +31,7 @@ num_options=$(jq '.options | length' "$CONFIG_FILE")
 menu_height=$((50 +  num_options * 35)) # Adjust 50 to fit your desired row height
 
 # Use wofi in dmenu mode to let the user select an option
-selection=$(echo -e "$options" | wofi --dmenu --gtk-layer-shell --height "$menu_height" --width 200 --prompt "$prompt" )
+selection=$(echo -e "$options" | wofi --height "$menu_height" --width 200 --prompt "$prompt" )
 rm -f "$LOCKFILE"
 # Take action based on the selection
 if [[ -n "$selection" ]] && [[ -n "${actions[$selection]}" ]]; then

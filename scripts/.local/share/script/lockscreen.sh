@@ -1,12 +1,5 @@
 #!/bin/bash
-
-# Take a screenshot and blur it
-#convert /home/otto/Pictures/Wallpapers/wallpaper.png -blur 0x10 /tmp/screen_blur.png
-
-killall -9 streamdeck
-while pgrep streamdeck > /dev/null; do
-    sleep 0.1
-done
+source ~/.local/share/script/stop_streamdeck.sh &&
 # Start the lock screen with the blurred image
 if [ -z "$1" ]; then
   pidof hyprlock || hyprlock &

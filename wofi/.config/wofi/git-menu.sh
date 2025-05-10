@@ -4,7 +4,7 @@ LOCKFILE="/tmp/wofi.lock"
 exec 200>"$LOCKFILE"
 flock -n 200 || exit 1
 
-pkill -SIGUSR1 waybar
+
 if [[ -n "$1" ]]; then
   search_dir="$1"
 else
@@ -29,7 +29,7 @@ prompt="Select a repo" # Set a default prompt if not provided in the config
 num_options=${#options[@]}
 menu_height=$((50 +  num_options * 35)) # Adjust 50 to fit your desired row height
 # Use wofi in dmenu mode to let the user select an option
-selection=$(printf "%s\n" "${options[@]}" | wofi --dmenu --gtk-layer-shell --height "$menu_height" --width 200 --prompt "$prompt" )
+selection=$(printf "%s\n" "${options[@]}" | wofi  --height "$menu_height" --width 200 --prompt "$prompt" )
 
 rm -f "$LOCKFILE"
 echo "Selected option: $selection"

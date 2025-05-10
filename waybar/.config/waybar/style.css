@@ -6,7 +6,7 @@
   font-weight: bold;
   font-size: 16px;
   min-height: 10px;
-  opacity: 0.95;
+  opacity: 1;
 }
 
 @import "theme.css";
@@ -14,53 +14,40 @@
 window#waybar {
   background: @bar-bg;
 }
-
-/* tooltip { */
-/*     background: @base; */
-/*     color: @text; */
-/*     border-radius: 7px; */
-/*     border-width: 0px; */
-/* } */
 tooltip {
-  border-radius: 12px; /* Rounded corners */
-  background-color: @base; /* Semi-transparent black background */
-  color: @text; /* Text color */
-  padding: 10px; /* Add padding to the tooltip */
-  font-size: 12px; /* Adjust font size */
-  border: 1px solid @subtle; /* Optional: Add a border */
+  border-radius: 10px;
+  background-color: @base;
+  color: @text;
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid @subtle;
 }
 
 #workspaces button {
   box-shadow: none;
   text-shadow: none;
-  padding: 0px;
-  border-radius: 9px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  margin-left: 0px;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-right: 5px;
+  padding: 10px;
+
+  border-radius: 10px;
   color: @text;
   animation: ws_normal 20s ease-in-out 1;
 }
+
 #workspaces button:last-child {
   margin-right: 0px;
 }
+
 #workspaces button.visible {
   background: @text;
   color: @base;
-  padding-left: 8px;
-  padding-right: 8px;
+
   animation: ws_hover 20s ease-in-out 1;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #workspaces button.active {
-  background: @foam;
+  background: @gold;
   color: @base;
-  padding-left: 8px;
-  padding-right: 8px;
   animation: ws_active 20s ease-in-out 1;
   transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
@@ -68,8 +55,6 @@ tooltip {
 #workspaces button:hover {
   background: @gold;
   color: @base;
-  padding-left: 8px;
-  padding-right: 8px;
   animation: ws_hover 20s ease-in-out 1;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
@@ -77,13 +62,7 @@ tooltip {
 #window {
   box-shadow: none;
   text-shadow: none;
-  padding: 0px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  margin-left: 0px;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-right: 0px;
+
   background: @base;
   color: @text;
   animation: ws_normal 20s ease-in-out 1;
@@ -91,149 +70,68 @@ tooltip {
   border-top: 1px solid @subtle; /* Optional: Add a border */
   border-bottom: 1px solid @subtle; /* Optional: Add a border */
 }
-
-#taskbar button {
-  box-shadow: none;
-  text-shadow: none;
-  padding: 0px;
-  border-radius: 12px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  margin-left: 0px;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-right: 0px;
-  color: @text;
-  animation: tb_normal 20s ease-in-out 1;
-}
-
-#taskbar button.active {
-  background: @foam;
-  color: @base;
-  margin-left: 3px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-right: 3px;
-  animation: tb_active 20s ease-in-out 1;
-  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-}
-
-#taskbar button:hover {
-  background: @gold;
-  color: @base;
-  animation: tb_hover 20s ease-in-out 1;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-}
-
-#tray menu * {
-  min-height: 16px;
-}
-
-#tray menu separator {
-  min-height: 10px;
-}
-
-#backlight,
-#battery,
-#bluetooth,
-#custom-cava,
-#custom-cliphist,
 #custom-updates,
-#clock,
-#clock,
-#custom-cpuinfo,
-#cpu,
-#custom-github_hyde,
-#custom-gpuinfo,
-#custom-hyprsunset,
-#idle_inhibitor,
-#custom-keybindhint,
 #custom-notification,
-#language,
-#memory,
-#mpris,
+#bluetooth,
 #network,
-#custom-notifications,
-#custom-power,
-#privacy,
-#pulseaudio,
-#custom-sensorsinfo,
-#custom-spotify,
-#taskbar,
-#taskbar,
-#taskbar,
-#taskbar#windows,
-#custom-theme,
-#tray,
+#battery,
+#custom-power {
+  font-size: 20px;
+}
+
 #custom-updates,
-#custom-wallchange,
-#custom-wbar,
-#custom-weather,
-#workspaces,
-#workspaces,
+#custom-notification,
+#bluetooth,
+#network,
+#battery,
+#custom-power,
+#clock {
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+}
 #workspaces,
 #custom-l_end,
 #custom-r_end,
-#custom-sl_end,
-#custom-sr_end,
-#custom-rl_end,
-#custom-rr_end {
+#window {
+  margin: 10px 0px 10px 0px;
+  padding: 10px 0px 10px 0px;
+}
+#custom-updates,
+#custom-notification,
+#bluetooth,
+#network,
+#battery,
+#workspaces,
+#window,
+#custom-power,
+#custom-l_end,
+#custom-r_end,
+#clock {
   color: @text;
   background: @base;
   opacity: 1;
-  margin: 4px 0px 4px 0px;
-  padding-left: 4px;
-  padding-right: 4px;
-  border-top: 1px solid @subtle; /* Optional: Add a border */
-  border-bottom: 1px solid @subtle; /* Optional: Add a border */
-}
-
-#workspaces,
-#taskbar {
-  padding: 0px;
+  border-top: 1px solid @subtle;
+  border-bottom: 1px solid @subtle;
 }
 
 #custom-r_end {
-  border-radius: 0px 21px 21px 0px;
+  border-radius: 0px 10px 10px 0px;
 
   border-top: 1px solid @subtle; /* Optional: Add a border */
   border-right: 1px solid @subtle; /* Optional: Add a border */
   border-bottom: 1px solid @subtle; /* Optional: Add a border */
-  margin-right: 9px;
+
+  margin-right: 10px;
   padding-right: 0px;
 }
 
 #custom-l_end {
-  border-radius: 21px 0px 0px 21px;
+  border-radius: 10px 0px 0px 10px;
   border-top: 1px solid @subtle; /* Optional: Add a border */
   border-left: 1px solid @subtle; /* Optional: Add a border */
   border-bottom: 1px solid @subtle; /* Optional: Add a border */
 
-  margin-left: 9px;
+  margin-left: 10px;
 
   padding-left: 0px;
-}
-
-#custom-sr_end {
-  border-radius: 0px;
-  margin-right: 9px;
-  padding-right: 3px;
-}
-
-#custom-sl_end {
-  border-radius: 0px;
-  margin-left: 9px;
-  padding-left: 3px;
-}
-
-#custom-rr_end {
-  border-radius: 0px 7px 7px 0px;
-  margin-right: 9px;
-  padding-right: 3px;
-}
-
-#custom-rl_end {
-  border-radius: 7px 0px 0px 7px;
-  margin-left: 9px;
-  padding-left: 3px;
 }
