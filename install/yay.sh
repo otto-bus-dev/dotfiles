@@ -1,4 +1,5 @@
 #!/bin/bash
+silent() { "$@" > /dev/null 2>&1; }
 
 # Function to check if yay is installed
 is_yay_installed() {
@@ -10,16 +11,16 @@ install_yay() {
     echo "Installing yay..."
     
     # Install required dependencies
-    sudo pacman -Sy --needed --noconfirm git base-devel
+    silent sudo pacman -Sy --needed --noconfirm git base-devel
 
     # Clone the yay repository
-    git clone https://aur.archlinux.org/yay.git
+    silent git clone https://aur.archlinux.org/yay.git
 
     # Change directory to yay
     cd yay || exit
 
     # Build and install yay
-    makepkg -si --noconfirm
+    silent makepkg -si --noconfirm
 
     # Return to the original directory and clean up
     cd ..

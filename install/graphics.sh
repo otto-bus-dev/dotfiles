@@ -1,4 +1,6 @@
-nc#!/bin/bash
+#!/bin/bash
+silent() { "$@" > /dev/null 2>&1; }
+
 
 # Function to detect the GPU
 detect_gpu() {
@@ -18,14 +20,14 @@ detect_gpu() {
 # Function to install NVIDIA drivers
 install_nvidia_driver() {
     echo "Installing NVIDIA drivers..."
-    yay -S --noconfirm nvidia-open nvidia-utils	nvidia-settings nvidia-dkms
+    silent yay -S --noconfirm nvidia-open nvidia-utils	nvidia-settings nvidia-dkms
     sudo cp ~/dotfiles/etc/mkinitcpio.nvidia.conf /etc/mkinitcpio.conf
 }
 
 # Function to install Intel drivers
 install_intel_driver() {
     echo "Installing Intel drivers..."
-    yay -S --noconfirm xf86-video-intel
+    silent yay -S --noconfirm xf86-video-intel
     sudo cp ~/dotfiles/etc/mkinitcpio.conf /etc/mkinitcpio.conf
 }
 

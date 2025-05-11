@@ -83,16 +83,27 @@ TOOLS=(
   virtualbox
   virtualbox-host-modules-arch
 )
+
+silent() { "$@" > /dev/null 2>&1; }
+
 install_packages(){
 	local packages=("$@")
-	echo "${packages[@]}"
 	for package in "${packages[@]}"; do
-		yay -S --noconfirm ${package}
+    if pacman -Qq "${package}" &>/dev/null; then
+      echo "  - ${package} is already installed."
+      continue
+    fi
+    echo "  - install ${package} is already installed."
+		silent yay -S --noconfirm ${package}
 	done
 }
 
+echo "install system utilities :"
 install_packages "${SYSTEM_UTILITIES[@]}"
+echo "install desktop :"
 install_packages "${DESKTOP[@]}"
-install_packages "${APPS[@]}"
+echo "install tools :"
 install_packages "${TOOLS[@]}"
+echo "install apps :"
+install_packages "${APPS[@]}"
 
