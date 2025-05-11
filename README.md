@@ -1,9 +1,7 @@
 # dotfiles
 to install system
-
-'''sh
-pacman -S git
-git config --global user.email "otto.bus.dev@gmail.com"
-git config --global user.name "otto"
-ssh-keygen -t ed25519 -C "otto.bus.dev@gmail.com"git config --global user.email "otto.bus.dev@gmail.com"
-'''
+- run archinstall with minimal packages
+- when archinstall done reboot and login as user
+- install git package : sudo pacman -S git
+- clone repo from ~ : git clone https://github.com/otto-bus-dev/dotfiles.git
+- run install script
