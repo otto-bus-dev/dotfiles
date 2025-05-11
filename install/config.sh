@@ -2,8 +2,8 @@
 silent() { "$@" > /dev/null 2>&1; }
 
 echo "setting up git global user config"
-git config --global user.email "otto.bus.dev@gmail.com"
-git config --global user.name "otto"
+git config --global user.email $1
+git config --global user.name $2
 
 echo "installing packages"
 silent dotnet tool install -g csharpier
