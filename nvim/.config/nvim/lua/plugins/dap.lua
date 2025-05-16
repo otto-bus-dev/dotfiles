@@ -49,6 +49,27 @@ return {
 				port = 5678,
 			}
 
+			dap.adapters.codelldb = {
+				type = "server",
+				port = "${port}",
+				executable = {
+					command = "codelldb", -- Update this path
+					args = { "--port", "${port}" },
+				},
+			}
+			dap.configurations.rust = {
+				{
+					name = "Debug",
+					type = "codelldb",
+					request = "launch",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+					end,
+					cwd = "${workspaceFolder}",
+					stopOnEntry = false,
+				},
+			}
+
 			-- dap.configurations.python = {
 			--   {
 			--     type = 'blender',

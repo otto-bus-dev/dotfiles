@@ -2,10 +2,6 @@
   "prompt": "Select settings",
   "options": [
     {
-      "option": " theme",
-      "action": "nwg-look"
-    },
-    {
       "option": "󰛳 network",
       "action": "kitty nmtui"
     },

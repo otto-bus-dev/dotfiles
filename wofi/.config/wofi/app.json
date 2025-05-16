@@ -3,7 +3,7 @@
   "options": [
     {
       "option": "󰖟 brave",
-      "action": "brave"
+      "action": "brave --enable-features=UseOzonePlatform --ozone-platform=wayland"
     },
     {
       "option": "󰂫 blender",
@@ -39,7 +39,11 @@
     },
     {
       "option": "󰣳 nas",
-      "action": "brave https://192-168-86-24.otto-bus-dev.direct.quickconnect.to:5001/"
+      "action": "brave https://nas:5001/ --enable-features=UseOzonePlatform --ozone-platform=wayland"
+    },
+    {
+      "option": "󰣳 proxmox",
+      "action": "brave https://192.168.86.250:8006/ --enable-features=UseOzonePlatform --ozone-platform=wayland"
     },
     {
       "option": " virtualbox",

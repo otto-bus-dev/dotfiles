@@ -34,6 +34,18 @@ return {
 				end
 			end
 
+			vim.diagnostic.config({
+				virtual_text = {
+					prefix = "●", -- or "E", or ""
+					source = "always",
+					spacing = 2,
+				},
+				signs = true,
+				underline = true,
+				update_in_insert = false,
+				severity_sort = true,
+			})
+
 			-- Retrieve the environment variable
 
 			local python_path = os.getenv("BLENDER_PYTHON_PATH")
@@ -116,6 +128,8 @@ return {
 					null_ls.builtins.formatting.prettier, -- JS, TS, JSON, etc.
 					null_ls.builtins.formatting.stylua, -- Lua formatting
 					null_ls.builtins.formatting.csharpier, -- C# Formatter
+					null_ls.builtins.formatting.rustfmt, -- Rust Formatter
+					null_ls.builtins.diagnostics.rustfmt, -- Rust Linter
 				},
 				border = "rounded", -- Add this line to set the border to rounded
 				on_attach = on_attach,

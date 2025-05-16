@@ -1,5 +1,5 @@
 #!/bin/bash
-updates=$(checkupdates 2>/dev/null | wc -l)
+updates=$(yay -Qua 2>/dev/null | wc -l)
 if [ "$updates" -eq 0 ]; then
   echo -e "<span foreground='#9ccfd8'><sup>󰮯 </sup></span>"
 else 

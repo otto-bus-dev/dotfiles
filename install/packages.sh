@@ -6,10 +6,6 @@ SYSTEM_UTILITIES=(
 	bluez-utils
   bluez-obex
 	bluetuith
-	nvidia-open
-	nvidia-utils
-	nvidia-settings
-	nvidia-dkms
   cups
   brother-mfc-j5330dw
   pipewire
@@ -28,13 +24,14 @@ DESKTOP=(
 	hyprpaper
 	swaync
 	gtk4
-	nwg-look
+	# nwg-look
 	waybar
 	xdg-desktop-portal 
 	xdg-desktop-portal-gtk
 	xdg-desktop-portal-hyprland
 	nautilus
 	rose-pine-gtk-theme-full
+  rose-pine-cursor
   xclip
   wdisplays
   brightnessctl
@@ -82,6 +79,9 @@ TOOLS=(
   nfs-utils
   virtualbox
   virtualbox-host-modules-arch
+  wget
+  ripgrep
+  tree-sitter
 )
 
 silent() { "$@" > /dev/null 2>&1; }
@@ -93,7 +93,7 @@ install_packages(){
       echo "  - ${package} is already installed."
       continue
     fi
-    echo "  - install ${package} is already installed."
+    echo "  - install ${package}"
 		silent yay -S --noconfirm ${package}
 	done
 }
