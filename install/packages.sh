@@ -11,7 +11,9 @@ SYSTEM_UTILITIES=(
   pipewire
   pipewire-pulse
   wireplumber
+  ddcutil
   openssh
+  wlr-randr
 )
 
 DESKTOP=(
