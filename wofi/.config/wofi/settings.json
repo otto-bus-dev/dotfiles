@@ -19,7 +19,7 @@
     },
     {
       "option": "󰍹 display",
-      "action": "wdisplays"
+      "action": "kitty display-tui"
     },
     {
       "option": " sound",
