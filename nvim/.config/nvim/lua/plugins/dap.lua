@@ -32,7 +32,7 @@ return {
 				command = "mono",
 				args = {
 					vim.fn.stdpath("config") .. "/dependencies/dap/vscode-unity-debug/bin/UnityDebug.exe",
-					"--unity",
+					-- "--unity",
 				},
 			}
 			--

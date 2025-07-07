@@ -47,13 +47,9 @@ return {
 			})
 
 			-- Retrieve the environment variable
-
 			local python_path = os.getenv("BLENDER_PYTHON_PATH")
 			local blender_lib_path = os.getenv("BLENDER_PYTHON_LIB_PATH")
 			local blender_bl_operators_path = os.getenv("BLENDER_PYTHON_BL_OPERATORS")
-
-			local python_version = vim.fn.systemlist("ls $BLENDER_PYTHON_PATH/bin | grep python")[1]
-
 			-- notify the user if the environment variable is not set
 			if not python_path or python_path == "" then
 				vim.notify(
@@ -61,6 +57,7 @@ return {
 					vim.log.levels.ERROR
 				)
 			end
+
 			-- Capabilities for autocompletion
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 			lspconfig.pyright.setup({
@@ -103,7 +100,7 @@ return {
 			})
 			-- Setup OmniSharp for Unity (without requiring .sln file)
 			lspconfig.omnisharp.setup({
-				cmd = { "omnisharp" },
+				cmd = { "OmniSharp" },
 				root_dir = function(fname)
 					return lspconfig.util.root_pattern("*.sln")(fname) -- Try .sln first
 						or lspconfig.util.root_pattern(".git")(fname) -- Otherwise, use .git
@@ -128,8 +125,7 @@ return {
 					null_ls.builtins.formatting.prettier, -- JS, TS, JSON, etc.
 					null_ls.builtins.formatting.stylua, -- Lua formatting
 					null_ls.builtins.formatting.csharpier, -- C# Formatter
-					null_ls.builtins.formatting.rustfmt, -- Rust Formatter
-					null_ls.builtins.diagnostics.rustfmt, -- Rust Linter
+					null_ls.builtins.formatting.rustywind, -- Rust Formatter
 				},
 				border = "rounded", -- Add this line to set the border to rounded
 				on_attach = on_attach,
