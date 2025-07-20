@@ -18,6 +18,10 @@
       "action": "nvidia-settings"
     },
     {
+      "option": "󰐪 printer",
+      "action": "kitty printer-tui"
+    },
+    {
       "option": "󰍹 display",
       "action": "kitty display-tui"
     },
