@@ -81,6 +81,7 @@ TOOLS=(
   nfs-utils
   virtualbox
   virtualbox-host-modules-arch
+  linux-headers
   wget
   ripgrep
   tree-sitter
