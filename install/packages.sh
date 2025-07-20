@@ -43,6 +43,9 @@ DESKTOP=(
   seahorse
   networkmanager
   alsa-utils
+  slurp
+  grim
+  wl-clipboard
 )
 
 APPS=(
