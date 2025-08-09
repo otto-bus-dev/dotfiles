@@ -20,7 +20,7 @@ install_yay() {
     cd yay || exit
 
     # Build and install yay
-    silent makepkg -si --noconfirm
+    silent sudo makepkg -si --noconfirm
 
     # Return to the original directory and clean up
     cd ..
