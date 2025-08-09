@@ -20,7 +20,7 @@ detect_gpu() {
 # Function to install NVIDIA drivers
 install_nvidia_driver() {
     echo "Installing NVIDIA drivers..."
-    silent yay -S --noconfirm nvidia-open nvidia-utils	nvidia-settings nvidia-dkms
+    silent yay -S --noconfirm nvidia-open nvidia-utils	nvidia-settings 
     sudo cp ~/dotfiles/etc/mkinitcpio.nvidia.conf /etc/mkinitcpio.conf
 }
 

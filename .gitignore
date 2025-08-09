@@ -1,3 +1,4 @@
 tmux/.config/tmux/plugins/
 wallpapers/.config/wallpapers/selected/
 nvim/.config/nvim/lazy-lock.json
+hypr/.config/hypr/hyprland/monitors.conf

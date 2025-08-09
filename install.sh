@@ -2,6 +2,10 @@
 echo "//////////////////////////////////////////////////////"
 echo "////////// 0 - set up parameters  ////////////////////"
 echo "//////////////////////////////////////////////////////"
+echo "super user password"
+sudo -v  # Ask for password once
+while true; do sudo -n true; sleep 60; done 2>/dev/null &
+# Your script here
 echo "Git Global User Config"
 read -p "Enter your git user mail: " git_user_mail 
 read -p "Enter your git user name: " git_user_name
