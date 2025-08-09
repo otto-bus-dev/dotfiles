@@ -46,6 +46,7 @@ DESKTOP=(
   slurp
   grim
   wl-clipboard
+  neofetch
 )
 
 APPS=(

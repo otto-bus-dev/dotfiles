@@ -11,6 +11,9 @@ silent dotnet tool install -g csharpier
 echo "installing stow"
 silent git clone https://github.com/tmux-plugins/tpm ~/dotfiles/tmux/plugins/tpm
 
+echo "removing existing .bashrc file"
+silent rm ~/.bashrc
+
 echo "stowing dotfiles"
 cd ~/dotfiles
 stow bash
@@ -25,7 +28,11 @@ stow tmux
 stow nvim
 stow wallpapers
 stow fonts
+stow gtk
 cd ~
+
+echo "get tmux package manager"
+silent git clone https://github.com/tmux-plugins/tpm ~/dotfiles/tmux/.config/tmux/plugins/tpm
 
 echo "copy files for boot setup"
 sudo cp ~/dotfiles/greetd/config.toml /etc/greetd/
