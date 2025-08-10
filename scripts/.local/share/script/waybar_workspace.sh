@@ -42,5 +42,3 @@ json_array="${json_array:1}"
 waybar_output=$(echo "$json_array" | jq -c 'reduce .[] as $item ({}; .text += "\($item.id): \($item.apps), ") | .text = .text[:-2]')
 echo "{\"text\":\"pace:al_apps\",\"tooltip\":\"workspace\",\"class\":\"workspace\",\"percentage\":1},"
 
-# Output the final JSON result
-# echo "$json_array"

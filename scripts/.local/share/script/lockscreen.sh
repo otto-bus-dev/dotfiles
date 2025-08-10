@@ -1,5 +1,5 @@
 #!/bin/bash
-~/.local/share/script/stop_streamdeck.sh &&
+#~/.local/share/script/stop_streamdeck.sh &&
 
 # Start the lock screen with the blurred image
 if [ -z "$1" ]; then

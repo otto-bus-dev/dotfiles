@@ -13,9 +13,9 @@ progress_bar() {
   printf "] %d%%" "$percent"
 }
 
-# total=100
-# for i in $(seq 0 $total); do
-#   progress_bar $i $total
-#   sleep 0.05
-# done
-# echo
+total=100
+for i in $(seq 0 $total); do
+   progress_bar $i $total
+   sleep 0.05
+ done
+ echo

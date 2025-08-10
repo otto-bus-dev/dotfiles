@@ -4,6 +4,7 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias ssh-key-add='ssh-keygen -t ed25519 -C $1'
 PS1='[\u@\h \W]\$ '
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
@@ -50,6 +51,3 @@ export VBOX_VGPU=1
 #
 PS1='\[\e[32m\]\w \[\e[33m\] \[\e[0m\]'
 neofetch 
-[ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
-source $HOME/.config/bash/shell_completion.sh
-# eval "$(gh completion -s bash)"

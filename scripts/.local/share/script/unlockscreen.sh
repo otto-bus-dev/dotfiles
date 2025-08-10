@@ -1,3 +1,3 @@
 #!/bin/bash 
-streamdeck -n 
+#streamdeck -n 
 

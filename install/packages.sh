@@ -18,6 +18,7 @@ SYSTEM_UTILITIES=(
 
 DESKTOP=(
   greetd
+  gtkgreet
 	hyprland-git
 	hyprlock
 	hypridle
@@ -26,7 +27,6 @@ DESKTOP=(
 	hyprpaper
 	swaync
 	gtk4
-	# nwg-look
 	waybar
 	xdg-desktop-portal 
 	xdg-desktop-portal-gtk
@@ -52,7 +52,6 @@ DESKTOP=(
 APPS=(
 	brave-bin
 	obsidian
-  blender
   unityhub
   thunderbird
   scratch
