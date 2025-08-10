@@ -11,7 +11,7 @@ install_yay() {
     echo "Installing yay..."
     
     # Install required dependencies
-    silent sudo pacman -Sy --needed --noconfirm git base-devel
+    silent pacman -Sy --needed --noconfirm git base-devel
 
     # Clone the yay repository
     silent git clone https://aur.archlinux.org/yay.git
@@ -20,7 +20,7 @@ install_yay() {
     cd yay || exit
 
     # Build and install yay
-    silent sudo makepkg -si --noconfirm
+    silent makepkg -si --noconfirm
 
     # Return to the original directory and clean up
     cd ..

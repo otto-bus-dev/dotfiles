@@ -9,7 +9,7 @@ echo "installing packages"
 silent dotnet tool install -g csharpier
 
 echo "installing stow"
-silent git clone https://github.com/tmux-plugins/tpm ~/dotfiles/tmux/plugins/tpm
+silent git clone https://github.com/tmux-plugins/tpm ~/dotfiles/tmux/.config/tmux/plugins/tpm
 
 echo "removing existing .bashrc file"
 silent rm ~/.bashrc
@@ -29,7 +29,6 @@ stow nvim
 stow wallpapers
 stow fonts
 stow gtk
-stow -t ~ brave
 stow ssh
 cd ~
 
