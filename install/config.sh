@@ -8,9 +8,6 @@ git config --global user.name $2
 echo "installing packages"
 silent dotnet tool install -g csharpier
 
-echo "installing stow"
-silent git clone https://github.com/tmux-plugins/tpm ~/dotfiles/tmux/.config/tmux/plugins/tpm
-
 echo "removing existing .bashrc file"
 silent rm ~/.bashrc
 
@@ -37,4 +34,3 @@ silent git clone https://github.com/tmux-plugins/tpm ~/dotfiles/tmux/.config/tmu
 echo "install tmux packages"
 silent ~/.config/tmux/plugins/tpm/bin/install_plugins
 
-~/dotfiles/install/system-files.sh

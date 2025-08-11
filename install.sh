@@ -33,12 +33,17 @@ if [[ "$1" == "full" ]]; then
   echo "//////////////////////////////////////////////////////"
   ~/dotfiles/install/services.sh
   echo "//////////////////////////////////////////////////////"
-  echo "////////// 6 - Installing Blender  ///////////////////"
+  echo "////////// 6 - Updating system files///////////////////"
   echo "//////////////////////////////////////////////////////"
-  ~/dotfiles/install/blender.sh
-elif [[ "$1" == "boot" ]]; then
-  echo "boot"
   ~/dotfiles/install/system-files.sh
+elif [[ "$1" == "boot" ]]; then
+  ~/dotfiles/install/system-files.sh
+elif [[ "$1" == "blender" ]]; then
+  ~/dotfiles/install/blender.sh
+elif [[ "$1" == "rust" ]]; then
+  ~/dotfiles/install/rust.sh
+elif [[ "$1" == "pygame" ]]; then
+  ~/dotfiles/install/pygame.sh
 else
   echo "no options"
 fi
