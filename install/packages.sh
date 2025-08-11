@@ -47,6 +47,7 @@ DESKTOP=(
   grim
   wl-clipboard
   neofetch
+  nwg-look
 )
 
 APPS=(

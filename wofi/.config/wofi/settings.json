@@ -6,6 +6,10 @@
       "action": "kitty nmtui"
     },
     {
+      "option": " theme",
+      "action": "nwg-look"
+    },
+    {
       "option": "󰂯 bluetooth",
       "action": "kitty bluetuith"
     },
