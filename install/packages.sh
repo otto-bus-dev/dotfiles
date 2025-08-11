@@ -1,4 +1,6 @@
 #!/bin/bash
+
+source ~/dotfiles/install/utils/common.sh
 SYSTEM_UTILITIES=(
 	nm-applet
 	nm-connection-editor
@@ -53,10 +55,7 @@ DESKTOP=(
 APPS=(
 	brave-bin
 	obsidian
-  unityhub
   thunderbird
-  scratch
-  vlc
 )
 
 TOOLS=(
@@ -90,20 +89,6 @@ TOOLS=(
   ripgrep
   tree-sitter
 )
-
-silent() { "$@" > /dev/null 2>&1; }
-
-install_packages(){
-	local packages=("$@")
-	for package in "${packages[@]}"; do
-    if pacman -Qq "${package}" &>/dev/null; then
-      echo "  - ${package} is already installed."
-      continue
-    fi
-    echo "  - install ${package}"
-		silent yay -S --noconfirm ${package}
-	done
-}
 
 echo "install system utilities :"
 install_packages "${SYSTEM_UTILITIES[@]}"
