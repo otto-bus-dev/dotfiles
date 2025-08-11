@@ -39,11 +39,15 @@ if [[ "$1" == "full" ]]; then
 elif [[ "$1" == "boot" ]]; then
   ~/dotfiles/install/system-files.sh
 elif [[ "$1" == "blender" ]]; then
-  ~/dotfiles/install/blender.sh
+  ~/dotfiles/install/apps/blender.sh
+elif [[ "$1" == "unity" ]]; then
+  ~/dotfiles/install/apps/unity.sh
+elif [[ "$1" == "scratch" ]]; then
+  ~/dotfiles/install/apps/scratch.sh
 elif [[ "$1" == "rust" ]]; then
-  ~/dotfiles/install/rust.sh
+  ~/dotfiles/install/apps/rust.sh
 elif [[ "$1" == "pygame" ]]; then
-  ~/dotfiles/install/pygame.sh
+  ~/dotfiles/install/apps/pygame.sh
 else
   echo "no options"
 fi
