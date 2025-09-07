@@ -56,6 +56,7 @@ APPS=(
 	brave-bin
 	obsidian
   thunderbird
+  gimp
 )
 
 TOOLS=(
