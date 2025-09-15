@@ -50,6 +50,8 @@ DESKTOP=(
   wl-clipboard
   neofetch
   nwg-look
+  bitwarder-cli
+
 )
 
 APPS=(
