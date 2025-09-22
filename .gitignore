@@ -6,7 +6,9 @@ hyprctl_output.json
 brave
 ssh/.ssh/github
 ssh/.ssh/ssh-otto
+ssh/.ssh/ssh-obsidian
 ssh/.ssh/github.pub
 ssh/.ssh/ssh-otto.pub
+ssh/.ssh/ssh-obsidian.pub
 ssh/.ssh/known_hosts
 ssh/.ssh/known_hosts.old

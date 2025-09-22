@@ -10,7 +10,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp", -- autocompletion source for lsp
 		},
 		config = function()
-			local lspconfig = require("lspconfig")
+			-- local lspconfig = require("lspconfig")
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
 			local null_ls = require("null-ls")
 			local on_attach = function(client, bufnr)
@@ -60,7 +60,9 @@ return {
 
 			-- Capabilities for autocompletion
 			local capabilities = cmp_nvim_lsp.default_capabilities()
-			lspconfig.pyright.setup({
+
+			-- MIGRATED TO vim.lsp.config()
+			vim.lsp.config("pyright", {
 				on_attach = on_attach,
 				capabilities = capabilities,
 				settings = {
@@ -69,55 +71,106 @@ return {
 							extraPaths = {
 								blender_lib_path,
 								blender_bl_operators_path,
-							}, -- Replace with the actual path to Blender libraries
+							},
 							autosearchPaths = true,
 							useLibraryCodeForTypes = true,
 						},
 					},
 				},
 			})
-			lspconfig.lua_ls.setup({
+
+			vim.lsp.config("lua_ls", {
+				on_attach = on_attach,
+				capabilities = capabilities,
 				settings = {
 					Lua = {
-						runtime = {
-							-- Tell the language server which version of Lua you're using
-							version = "LuaJIT",
-						},
-						diagnostics = {
-							-- Get the language server to recognize the `vim` global
-							globals = { "vim" },
-						},
+						runtime = { version = "LuaJIT" },
+						diagnostics = { globals = { "vim" } },
 						workspace = {
-							-- Make the server aware of Neovim runtime files
 							library = vim.api.nvim_get_runtime_file("", true),
-							checkThirdParty = false, -- Prevent prompt for third-party libraries
+							checkThirdParty = false,
 						},
-						telemetry = {
-							enable = false,
-						},
+						telemetry = { enable = false },
 					},
 				},
 			})
-			-- Setup OmniSharp for Unity (without requiring .sln file)
-			lspconfig.omnisharp.setup({
+
+			vim.lsp.config("omnisharp", {
+				on_attach = on_attach,
+				capabilities = capabilities,
 				cmd = { "OmniSharp" },
 				root_dir = function(fname)
-					return lspconfig.util.root_pattern("*.sln")(fname) -- Try .sln first
-						or lspconfig.util.root_pattern(".git")(fname) -- Otherwise, use .git
-						or lspconfig.util.root_pattern("Assets")(fname) -- Last fallback for Unity
+					local util = require("lspconfig.util")
+					return util.root_pattern("*.sln")(fname)
+						or util.root_pattern(".git")(fname)
+						or util.root_pattern("Assets")(fname)
 				end,
 				settings = {
 					omnisharp = {
 						useModernNet = true,
 						enableRoslynAnalyzers = true,
-						msbuild = {
-							loadProjectsOnDemand = false,
-						},
+						msbuild = { loadProjectsOnDemand = false },
 					},
 				},
-				on_attach = on_attach,
-				capabilities = capabilities,
 			})
+			-- 			lspconfig.pyright.setup({
+			-- 	on_attach = on_attach,
+			-- 	capabilities = capabilities,
+			-- 	settings = {
+			-- 		python = {
+			-- 			analysis = {
+			-- 				extraPaths = {
+			-- 					blender_lib_path,
+			-- 					blender_bl_operators_path,
+			-- 				}, -- Replace with the actual path to Blender libraries
+			-- 				autosearchPaths = true,
+			-- 				useLibraryCodeForTypes = true,
+			-- 			},
+			-- 		},
+			-- 	},
+			-- })
+			-- lspconfig.lua_ls.setup({
+			-- 	settings = {
+			-- 		Lua = {
+			-- 			runtime = {
+			-- 				-- Tell the language server which version of Lua you're using
+			-- 				version = "LuaJIT",
+			-- 			},
+			-- 			diagnostics = {
+			-- 				-- Get the language server to recognize the `vim` global
+			-- 				globals = { "vim" },
+			-- 			},
+			-- 			workspace = {
+			-- 				-- Make the server aware of Neovim runtime files
+			-- 				library = vim.api.nvim_get_runtime_file("", true),
+			-- 				checkThirdParty = false, -- Prevent prompt for third-party libraries
+			-- 			},
+			-- 			telemetry = {
+			-- 				enable = false,
+			-- 			},
+			-- 		},
+			-- 	},
+			-- })
+			-- -- Setup OmniSharp for Unity (without requiring .sln file)
+			-- lspconfig.omnisharp.setup({
+			-- 	cmd = { "OmniSharp" },
+			-- 	root_dir = function(fname)
+			-- 		return lspconfig.util.root_pattern("*.sln")(fname) -- Try .sln first
+			-- 			or lspconfig.util.root_pattern(".git")(fname) -- Otherwise, use .git
+			-- 			or lspconfig.util.root_pattern("Assets")(fname) -- Last fallback for Unity
+			-- 	end,
+			-- 	settings = {
+			-- 		omnisharp = {
+			-- 			useModernNet = true,
+			-- 			enableRoslynAnalyzers = true,
+			-- 			msbuild = {
+			-- 				loadProjectsOnDemand = false,
+			-- 			},
+			-- 		},
+			-- 	},
+			-- 	on_attach = on_attach,
+			-- 	capabilities = capabilities,
+			-- })
 
 			-- Setup null-ls for extra formatting and linting
 			null_ls.setup({
