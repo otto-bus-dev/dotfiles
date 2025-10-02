@@ -1,8 +1,8 @@
 return {
 	{
 		"nvimtools/none-ls.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
-
 	-- LSP Config
 	{
 		"neovim/nvim-lspconfig",
@@ -42,7 +42,7 @@ return {
 				},
 				signs = true,
 				underline = true,
-				update_in_insert = false,
+				update_in_insert = true,
 				severity_sort = true,
 			})
 
@@ -113,66 +113,7 @@ return {
 					},
 				},
 			})
-			-- 			lspconfig.pyright.setup({
-			-- 	on_attach = on_attach,
-			-- 	capabilities = capabilities,
-			-- 	settings = {
-			-- 		python = {
-			-- 			analysis = {
-			-- 				extraPaths = {
-			-- 					blender_lib_path,
-			-- 					blender_bl_operators_path,
-			-- 				}, -- Replace with the actual path to Blender libraries
-			-- 				autosearchPaths = true,
-			-- 				useLibraryCodeForTypes = true,
-			-- 			},
-			-- 		},
-			-- 	},
-			-- })
-			-- lspconfig.lua_ls.setup({
-			-- 	settings = {
-			-- 		Lua = {
-			-- 			runtime = {
-			-- 				-- Tell the language server which version of Lua you're using
-			-- 				version = "LuaJIT",
-			-- 			},
-			-- 			diagnostics = {
-			-- 				-- Get the language server to recognize the `vim` global
-			-- 				globals = { "vim" },
-			-- 			},
-			-- 			workspace = {
-			-- 				-- Make the server aware of Neovim runtime files
-			-- 				library = vim.api.nvim_get_runtime_file("", true),
-			-- 				checkThirdParty = false, -- Prevent prompt for third-party libraries
-			-- 			},
-			-- 			telemetry = {
-			-- 				enable = false,
-			-- 			},
-			-- 		},
-			-- 	},
-			-- })
-			-- -- Setup OmniSharp for Unity (without requiring .sln file)
-			-- lspconfig.omnisharp.setup({
-			-- 	cmd = { "OmniSharp" },
-			-- 	root_dir = function(fname)
-			-- 		return lspconfig.util.root_pattern("*.sln")(fname) -- Try .sln first
-			-- 			or lspconfig.util.root_pattern(".git")(fname) -- Otherwise, use .git
-			-- 			or lspconfig.util.root_pattern("Assets")(fname) -- Last fallback for Unity
-			-- 	end,
-			-- 	settings = {
-			-- 		omnisharp = {
-			-- 			useModernNet = true,
-			-- 			enableRoslynAnalyzers = true,
-			-- 			msbuild = {
-			-- 				loadProjectsOnDemand = false,
-			-- 			},
-			-- 		},
-			-- 	},
-			-- 	on_attach = on_attach,
-			-- 	capabilities = capabilities,
-			-- })
 
-			-- Setup null-ls for extra formatting and linting
 			null_ls.setup({
 				sources = {
 					null_ls.builtins.formatting.prettier, -- JS, TS, JSON, etc.
@@ -180,13 +121,7 @@ return {
 					null_ls.builtins.formatting.csharpier, -- C# Formatter
 					null_ls.builtins.formatting.rustywind, -- Rust Formatter
 				},
-				border = "rounded", -- Add this line to set the border to rounded
 				on_attach = on_attach,
-			})
-
-			-- Set rounded border for hover window
-			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-				border = "rounded",
 			})
 		end,
 	},
@@ -233,8 +168,11 @@ return {
 					documentation = cmp.config.window.bordered(),
 				},
 				mapping = {
+					["<C-n>"] = cmp.mapping.select_next_item(),
+					["<C-p>"] = cmp.mapping.select_prev_item(),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<C-e>"] = cmp.mapping.close(),
 				},
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },

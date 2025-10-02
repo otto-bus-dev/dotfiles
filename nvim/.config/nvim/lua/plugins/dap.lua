@@ -1,20 +1,21 @@
 return {
-	{
-		"mfussenegger/nvim-dap-python",
-		config = function()
-			-- Retrieve the environment variable
-			local python_path = os.getenv("BLENDER_PYTHON_PATH")
-			local python_version = vim.fn.systemlist("ls $BLENDER_PYTHON_PATH/bin | grep python")[1]
-			-- notify the user if the environment variable is not set
-			if not python_path or python_path == "" then
-				vim.notify(
-					"BLENDER_PYTHON_PATH environment variable shoud be set to enable PYTHON debugging for blender",
-					vim.log.levels.ERROR
-				)
-			end
-			require("dap-python").setup("python3") -- .. "/bin/" .. python_version)
-		end,
-	},
+	{ "nvim-neotest/nvim-nio" },
+	-- {
+	--   "mfussenegger/nvim-dap-python",
+	--   config = function()
+	--     -- Retrieve the environment variable
+	--     local python_path = os.getenv("BLENDER_PYTHON_PATH")
+	--     local python_version = vim.fn.systemlist("ls $BLENDER_PYTHON_PATH/bin | grep python")[1]
+	--     -- notify the user if the environment variable is not set
+	--     if not python_path or python_path == "" then
+	--       vim.notify(
+	--         "BLENDER_PYTHON_PATH environment variable shoud be set to enable PYTHON debugging for blender",
+	--         vim.log.levels.ERROR
+	--       )
+	--     end
+	--     require("dap-python").setup(python_path .. "/bin/" .. python_version)
+	--   end,
+	-- },
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
@@ -100,38 +101,15 @@ return {
       ]])
 
 			vim.cmd([[
-  "hi default link DapUINormal Normal
-  "hi default link DapUIVariable Normal
-  "hi default DapUIScope guifg=#00F1F5
-  "hi default DapUIType guifg=#D484FF
-  "hi default link DapUIValue Normal
-  "hi default DapUIModifiedValue guifg=#00F1F5 gui=bold
-  "hi default DapUIDecoration guifg=#00F1F5
-  "hi default DapUIThread guifg=#A9FF68
-  "hi default DapUIStoppedThread guifg=#00f1f5
-  "hi default link DapUIFrameName Normal
-  "hi default DapUISource guifg=#D484FF
-  "hi default DapUILineNumber guifg=#00f1f5
-  "hi default link DapUIFloatNormal NormalFloat
-  "hi default DapUIFloatBorder guifg=#00F1F5
-  "hi default DapUIWatchesEmpty guifg=#F70067
-  "hi default DapUIWatchesValue guifg=#A9FF68
-  "hi default DapUIWatchesError guifg=#F70067
-  "hi default DapUIBreakpointsPath guifg=#00F1F5
-  "hi default DapUIBreakpointsInfo guifg=#A9FF68
-  "hi default DapUIBreakpointsCurrentLine guifg=#A9FF68 gui=bold
-  "hi default link DapUIBreakpointsLine DapUILineNumber
-  "hi default DapUIBreakpointsDisabledLine guifg=#424242
-  "hi default link DapUICurrentFrameName DapUIBreakpointsCurrentLine
-  hi default DapUIStepOver guifg=#908caa
-  hi default DapUIStepInto guifg=#908caa
-  hi default DapUIStepBack guifg=#908caa
-  hi default DapUIStepOut guifg=#908caa
-  hi default DapUIStop guifg=#eb6f92 guibg=NONE
-  hi default DapUIPlayPause guifg=#9ccfd8 guibg=#44415a ctermbg=NONE
-  hi default DapUIRestart guifg=#A9FF68 guibg=NONE ctermbg=NONE
-  hi default WinBar guifg=#44415a guibg=#44415a
-  ]])
+        hi default DapUIStepOver guifg=#908caa
+        hi default DapUIStepInto guifg=#908caa
+        hi default DapUIStepBack guifg=#908caa
+        hi default DapUIStepOut guifg=#908caa
+        hi default DapUIStop guifg=#eb6f92 guibg=NONE
+        hi default DapUIPlayPause guifg=#9ccfd8 guibg=#44415a ctermbg=NONE
+        hi default DapUIRestart guifg=#A9FF68 guibg=NONE ctermbg=NONE
+        hi default WinBar guifg=#44415a guibg=#44415a
+      ]])
 			-- Ensure nvim-dap-ui is configured
 			local dapui = require("dapui")
 			if dapui then

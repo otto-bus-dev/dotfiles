@@ -91,6 +91,7 @@ TOOLS=(
   wget
   ripgrep
   tree-sitter
+  github-cli
 )
 
 echo "install system utilities :"

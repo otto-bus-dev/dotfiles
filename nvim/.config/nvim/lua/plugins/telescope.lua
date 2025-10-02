@@ -1,5 +1,9 @@
 return {
 	"nvim-telescope/telescope.nvim",
+	{
+		"ThePrimeagen/harpoon",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 	"nvim-telescope/telescope-ui-select.nvim",
 	"nvim-telescope/telescope-project.nvim",
 	tag = "0.1.8",
@@ -11,17 +15,16 @@ return {
 		local telescope = require("telescope")
 		telescope.load_extension("project")
 		telescope.extensions.project.project({})
-
 		local project_actions = require("telescope._extensions.project.actions")
 		telescope.setup({
 			extensions = {
 				project = {
 					base_dirs = {
-						"~/dev/src",
-						{ "~/dev/src2" },
-						{ "~/dev/src3", max_depth = 4 },
-						{ path = "~/dev/src4" },
-						{ path = "~/dev/src5", max_depth = 2 },
+						"~/src",
+						{ "~/src2" },
+						{ "~/src3", max_depth = 4 },
+						{ path = "~/src4" },
+						{ path = "~/src5", max_depth = 2 },
 					},
 					ignore_missing_dirs = true, -- default: false
 					hidden_files = true, -- default: false
@@ -29,11 +32,8 @@ return {
 					order_by = "asc",
 					search_by = "title",
 					sync_with_nvim_tree = true, -- default false
-					-- default for on_project_selected = find project files
 					on_project_selected = function(prompt_bufnr)
-						-- Do anything you want in here. For example:
 						project_actions.change_working_directory(prompt_bufnr, false)
-						require("harpoon.ui").nav_file(1)
 					end,
 					mappings = {
 						n = {
@@ -62,7 +62,11 @@ return {
 						},
 					},
 				},
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown({}),
+				},
 			},
 		})
+		require("telescope").load_extension("ui-select")
 	end,
 }
