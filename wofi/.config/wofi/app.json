@@ -23,7 +23,11 @@
     },
     {
       "option": " obsidian",
-      "action": "obsidian"
+      "action": "obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu"
+    },
+    {
+      "option": " postman",
+      "action": "postman --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu"
     },
     {
       "option": " thunderbird",
