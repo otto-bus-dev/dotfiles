@@ -7,5 +7,10 @@ return {
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-web-devicons",
     },
+    config = function()
+      require("neo-tree").setup({
+        log_level = "info", -- or "error", "debug", etc.
+      })
+    end,
   },
 }

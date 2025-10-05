@@ -85,7 +85,7 @@
     "max-length": 50,
   },
   "custom/updates": {
-    "exec": "~/.local/share/script/get-pacman-updates.sh",
+    "exec": "/usr/share/scripts/get-pacman-updates.sh",
     "interval": 600,
     "tooltip": false,
   },

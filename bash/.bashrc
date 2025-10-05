@@ -11,11 +11,12 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 export GPG_AGENT_INFO=$XDG_RUNTIME_DIR/keyring/gpg
 export SESSION_MANAGER=$XDG_RUNTIME_DIR/keyring
 
-export PATH=$PATH:~/.local/share/scripts
+# export PATH=$PATH:~/.local/share/scripts
 export PATH=$PATH:~/.config/wofi
 export PATH=$PATH:~/.dotnet/tools
 export PATH=$PATH:~/.config/tmux
 export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:/usr/share/scripts
 
 
 export XCURSOR_THEME="BreezeX-RosePine-Linux"
@@ -51,3 +52,6 @@ export VBOX_VGPU=1
 #
 PS1='\[\e[32m\]\w \[\e[33m\] \[\e[0m\]'
 neofetch 
+
+# Created by `pipx` on 2025-09-23 20:10:28
+export PATH="$PATH:/home/otto/.local/bin"

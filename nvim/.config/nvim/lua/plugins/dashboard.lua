@@ -20,7 +20,7 @@ return {
 						{ desc = "󰊳 update", group = "@property", action = "Lazy update", key = "u" },
 						{
 							desc = "󰯉  projects",
-							group = "Keyword",
+							group = "ErrorMsg",
 							action = "Telescope project",
 							key = "p",
 						},

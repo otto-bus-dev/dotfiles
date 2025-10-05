@@ -13,6 +13,7 @@ silent rm ~/.bashrc
 echo "stowing dotfiles globals"
 cd ~/dotfiles
 sudo stow -t /etc etc
+sudo stow -t /usr/share/ scripts
 cd ~
 
 

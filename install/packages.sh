@@ -69,6 +69,7 @@ TOOLS=(
   kitty
 	lazygit
 	jq
+  vi
 	stow
   luarocks
   lua51

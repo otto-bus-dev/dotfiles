@@ -3,15 +3,15 @@
   "options": [
     {
       "option": " lock",
-      "action": "$HOME/.local/share/scripts/lockscreen.sh"
+      "action": "/usr/share/scripts/lockscreen.sh"
     },
     {
       "option": " reboot",
-      "action": "$HOME/.local/share/scripts/on-reboot.sh"
+      "action": "/usr/share/scripts/on-reboot.sh"
     },
     {
       "option": " shutdown",
-      "action": "$HOME/.local/share/scripts/on-shutdown.sh"
+      "action": "/usr/share/scripts/on-shutdown.sh"
     }
   ]
 }
