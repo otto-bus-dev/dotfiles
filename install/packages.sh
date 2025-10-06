@@ -93,6 +93,8 @@ TOOLS=(
   ripgrep
   tree-sitter
   github-cli
+  docker
+  docker-compose
 )
 
 echo "install system utilities :"
