@@ -30,15 +30,15 @@ options+=("$option")
 prompt="Select a tmux session" # Set a default prompt if not provided in the config
 # Calculate the height of the menu based on the number of options
 num_options=${#options[@]}
-menu_height=$((50 +  num_options * 35)) # Adjust 50 to fit your desired row height
+menu_height=$((num_options * 34)) # Adjust 50 to fit your desired row height
 # Use wofi in dmenu mode to let the user select an option
-selection=$(printf "%s\n" "${options[@]}" | wofi  --height "$menu_height" --width 200 --prompt "$prompt" )
+selection=$(printf "%s\n" "${options[@]}" | wofi  --height "$menu_height" --width 250 --prompt "$prompt" )
 
 echo "Selected option: $selection"
 
 if [[ "$selection" == "new" ]]; then
   # Execute the action associated with the selected option
-  selection=$(printf "%s\n" "${options[@]}" | wofi --height 70 --width 200 --prompt "Enter the name of the new tmux session" )
+  selection=$(printf "%s\n" "${options[@]}" | wofi --height 70 --width 250 --prompt "Enter the name of the new tmux session" )
   rm -f "$LOCKFILE"
   kitty  tmux new-session -s $selection 
 else

@@ -1,57 +1,31 @@
 window {
-  margin: 0px;
   background-color: #232136;
   border: solid 1px #393552;
   border-radius: 7px;
-  color: #e0def4;
-  font-family: "JetBrains Mono Medium Nerd Font";
-  font-size: 15px;
-  /* background-image: url("/home/otto/.config/wallpapers/all/rose_pine_maze.png"); */
 }
 
 #input {
-  margin: 5px;
-  border: none;
-  border-radius: 7px;
   color: #eb6f92;
   background-color: #393552;
+  border: solid 1px #393552;
+  border-radius: 7px;
+  line-height: 20px;
+  width: 100%;
 }
 
 #inner-box {
-  align-items: center;
-  margin: 5px;
+  margin-top: 5px;
   color: #232136;
   background-color: #393552;
   border-radius: 7px;
 }
 
-/* #outer-box::before { */
-/*   content: "jskldjfldks"; */
-/*   display: inline-block; */
-/*   border: none; */
-/*   width: 200px; */
-/*   height: 100%; */
-/*   border-radius: 7px; */
-/* } */
-
 #outer-box {
-  /* display: inline-block; */
-  width: 200px;
-  margin: 15px;
-  border: none;
-  border-radius: 7px;
-
+  margin: 5px;
+  color: #232136;
   background-color: transparent;
-  /* #232136; */
-  /**/
 }
 
-decoration {
-  background-image: url("/home/otto/.config/wallpapers/all/rose_pine_maze.png");
-  background-repeat: no-repeat;
-  background-size: cover; /* Make the image fit the area */
-  background-position: left; /* Position the image on the left */
-}
 #scroll {
   margin: 0px;
 }
@@ -60,6 +34,8 @@ decoration {
   margin: 5px;
   border: none;
   color: #e0def4;
+  line-height: 16px;
+  height: 16px;
 }
 
 #entry:selected {

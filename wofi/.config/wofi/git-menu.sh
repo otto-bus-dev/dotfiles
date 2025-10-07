@@ -28,9 +28,9 @@ done < <(find $search_dir -type f -name .otto)
 prompt="Select a repo" # Set a default prompt if not provided in the config
 # Calculate the height of the menu based on the number of options
 num_options=${#options[@]}
-menu_height=$((50 +  num_options * 35)) # Adjust 50 to fit your desired row height
+menu_height=$((num_options * 34)) # Adjust 50 to fit your desired row height
 # Use wofi in dmenu mode to let the user select an option
-selection=$(printf "%s\n" "${options[@]}" | wofi  --height "$menu_height" --width 200 --prompt "$prompt" )
+selection=$(printf "%s\n" "${options[@]}" | wofi  --height "$menu_height" --width 250 --prompt "$prompt" )
 
 rm -f "$LOCKFILE"
 echo "Selected option: $selection"

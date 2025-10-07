@@ -2,59 +2,59 @@
   "prompt": "Select an app",
   "options": [
     {
-      "option": "󰖟 brave",
+      "option": "󰖟  brave",
       "action": "brave --enable-features=UseOzonePlatform --ozone-platform=wayland"
     },
     {
-      "option": "󰂫 blender",
+      "option": "󰂫  blender",
       "action": "blender"
     },
     {
-      "option": " files",
+      "option": "  files",
       "action": "nautilus"
     },
     {
-      "option": " gimp",
+      "option": "  gimp",
       "action": "gimp"
     },
     {
-      "option": "󰄛 kitty",
+      "option": "󰄛  kitty",
       "action": "kitty"
     },
     {
-      "option": " obsidian",
+      "option": "  obsidian",
       "action": "obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu"
     },
     {
-      "option": " postman",
+      "option": "  postman",
       "action": "postman --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu"
     },
     {
-      "option": " thunderbird",
+      "option": "  thunderbird",
       "action": "thunderbird"
     },
     {
-      "option": "󰕼 vlc",
+      "option": "󰕼  vlc",
       "action": "vlc"
     },
     {
-      "option": " unity",
+      "option": "  unity",
       "action": "unityhub"
     },
     {
-      "option": " scratch",
+      "option": "  scratch",
       "action": "scratch"
     },
     {
-      "option": "󰣳 nas",
+      "option": "󰣳  nas",
       "action": "brave https://nas:5001/ --enable-features=UseOzonePlatform --ozone-platform=wayland"
     },
     {
-      "option": "󰣳 proxmox",
+      "option": "󰣳  proxmox",
       "action": "brave https://192.168.86.250:8006/ --enable-features=UseOzonePlatform --ozone-platform=wayland"
     },
     {
-      "option": " virtualbox",
+      "option": "  virtualbox",
       "action": "virtualbox"
     }
   ]
