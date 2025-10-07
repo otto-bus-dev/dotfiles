@@ -95,6 +95,7 @@ TOOLS=(
   github-cli
   docker
   docker-compose
+  htop
 )
 
 echo "install system utilities :"
