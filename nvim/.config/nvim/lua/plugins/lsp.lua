@@ -10,7 +10,6 @@ return {
       "hrsh7th/cmp-nvim-lsp", -- autocompletion source for lsp
     },
     config = function()
-      -- local lspconfig = require("lspconfig")
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
       local null_ls = require("null-ls")
       local on_attach = function(client, bufnr)
@@ -26,11 +25,11 @@ return {
         -- Autoformat on save
         if client.server_capabilities.documentFormattingProvider then
           vim.cmd([[
-            					augroup LspAutocommands
-              						autocmd! * <buffer>
-              						autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ timeout_ms = 1000 })
-            					augroup END
-          				]])
+              					augroup LspAutocommands
+                						autocmd! * <buffer>
+                						autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ timeout_ms = 1000 })
+              					augroup END
+            				]])
         end
       end
 
@@ -38,6 +37,7 @@ return {
 
       vim.diagnostic.config({
         virtual_lines = {
+          current_line = true,
           format = function(diagnostic)
             local icons = {
               [vim.diagnostic.severity.ERROR] = signs.Error,
@@ -72,8 +72,6 @@ return {
               result = result .. "\n  " .. wrapped[i]
             end
             return result
-            -- local source = diagnostic.source or ""
-            -- return string.format("%s %s: %s", icon, source, diagnostic.message)
           end,
           source = "always",
           spacing = 2,
@@ -81,18 +79,6 @@ return {
         virtual_text = false,
         signs = {
           text = {
-            [vim.diagnostic.severity.ERROR] = signs.Error,
-            [vim.diagnostic.severity.WARN] = signs.Warn,
-            [vim.diagnostic.severity.HINT] = signs.Hint,
-            [vim.diagnostic.severity.INFO] = signs.Info,
-          },
-          linehl = {
-            [vim.diagnostic.severity.ERROR] = signs.Error,
-            [vim.diagnostic.severity.WARN] = signs.Warn,
-            [vim.diagnostic.severity.HINT] = signs.Hint,
-            [vim.diagnostic.severity.INFO] = signs.Info,
-          },
-          numhl = {
             [vim.diagnostic.severity.ERROR] = signs.Error,
             [vim.diagnostic.severity.WARN] = signs.Warn,
             [vim.diagnostic.severity.HINT] = signs.Hint,
@@ -192,7 +178,7 @@ return {
       })
     end,
   },
-
+  --
   -- Mason (LSP Installer)
   {
     "williamboman/mason.nvim",
@@ -211,7 +197,11 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "pyright", "lua_ls", "omnisharp" },
+        ensure_installed = {
+          "pyright",
+          "lua_ls",
+          "omnisharp",
+        },
         automatic_installation = true,
       })
     end,
