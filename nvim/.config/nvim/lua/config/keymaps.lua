@@ -85,6 +85,14 @@ vim.api.nvim_set_keymap("n", "<leader><F2>", '<cmd>lua require"dapui".eval()<CR>
 -- vim.api.nvim_set_keymap("i", "<C-Esc>", "<Plug>(copilot-dismiss)", { noremap = true, silent = true })
 
 -------------------------------------------------------------------------------------------------------------
+-- DADBOD
+-------------------------------------------------------------------------------------------------------------
+-- works at runtime, clean and safe
+vim.api.nvim_set_keymap("n", "<Leader>pu", ":DBUIToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>pa", ":DBUIFindBuffer<CR>", { noremap = true, silent = true })
+-------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
 -- COPILOT
 -------------------------------------------------------------------------------------------------------------
 vim.api.nvim_set_keymap("n", "<Leader>cw", ":CopilotChat<CR>", { noremap = true, silent = true })

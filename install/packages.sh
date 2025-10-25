@@ -21,7 +21,7 @@ SYSTEM_UTILITIES=(
 DESKTOP=(
   greetd
   greetd-gtkgreet
-	hyprland-git
+	hyprland
 	hyprlock
 	hypridle
 	hyprpolkitagent
