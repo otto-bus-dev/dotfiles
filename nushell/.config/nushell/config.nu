@@ -40,6 +40,7 @@ def ssh-key-add [email: string] {
     ssh-keygen -t ed25519 -C $email
 }
 # ===== SSH Agent Integration =====
+def ssh-connect [] {
 # Check if ssh-agent is already running, otherwise start it
 let agent_running = (
     if ($env.SSH_AUTH_SOCK? | is-not-empty) and ($env.SSH_AGENT_PID? | is-not-empty) {
@@ -75,6 +76,7 @@ if not $agent_running {
             ssh-add $key_path | complete | ignore
         }
     }
+}
 }
 
 # Helper function to manually start/restart ssh-agent
