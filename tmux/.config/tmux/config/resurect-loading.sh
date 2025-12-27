@@ -4,7 +4,7 @@ cols=$(tput cols)
 rows=$(tput lines)
 # Display loading message
 
-text=" Restoring tmux session..."
+text="\e[34m Restoring tmux session..."
 cols=$(tput cols)
 rows=$(tput lines)
 
@@ -12,15 +12,10 @@ text_length=${#text}
 col=$((($cols - $text_length) / 2))
 row=$(($rows / 2))
 
-# Clear screen and position cursor
-# \033[H moves to home, \033[2J clears screen
-# \033[row;colH moves to specific position
 clear
 echo -ne "\033[${row};${col}H${text}"
 echo  # newline at the end
 
-# Maximum iterations to wait (fallback in case detection fails)
-# Each iteration is 0.3s, so ~33 iterations = ~10 seconds
 MAX_ITERATIONS=33
 iterations=0
 
@@ -54,15 +49,13 @@ done
 
 # Small delay to ensure everything is settled
 sleep 0.5
-text="󰩐 Session restored!"
+text="\e[32m󰩐 Session restored!"
 
 text_length=${#text}
 col=$((($cols - $text_length) / 2))
 row=$(($rows / 2))
 
 # Clear screen and position cursor
-# \033[H moves to home, \033[2J clears screen
-# \033[row;colH moves to specific position
 clear
 echo -ne "\033[${row};${col}H${text}"
 echo  # newline at the end
