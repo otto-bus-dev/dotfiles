@@ -51,7 +51,7 @@ DESKTOP=(
   neofetch
   nwg-look
   bitwarder-cli
-
+  nushell
 )
 
 APPS=(
