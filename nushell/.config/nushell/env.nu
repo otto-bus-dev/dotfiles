@@ -2,7 +2,7 @@
 # Nushell environment configuration
 
 # ===== Environment Variables =====
-$env.SSH_AUTH_SOCK = $"($env.XDG_RUNTIME_DIR)/gcr/ssh"
+# SSH_AUTH_SOCK is set by ssh-agent in config.nu
 $env.GPG_AGENT_INFO = $"($env.XDG_RUNTIME_DIR)/keyring/gpg"
 $env.SESSION_MANAGER = $"($env.XDG_RUNTIME_DIR)/keyring"
 

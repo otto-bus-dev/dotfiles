@@ -39,36 +39,54 @@ $env.PROMPT_MULTILINE_INDICATOR = {||
 def ssh-key-add [email: string] {
     ssh-keygen -t ed25519 -C $email
 }
-# ===== Keychain Integration =====
-# Run keychain and load SSH keys
-if (which keychain | is-not-empty) {
+# ===== SSH Agent Integration =====
+# Check if ssh-agent is already running, otherwise start it
+let agent_running = (
+    if ($env.SSH_AUTH_SOCK? | is-not-empty) and ($env.SSH_AGENT_PID? | is-not-empty) {
+        # Check if the agent process is actually running
+        (ps | where pid == $env.SSH_AGENT_PID | length) > 0
+    } else {
+        false
+    }
+)
 
+if not $agent_running {
+    # Start ssh-agent and set environment variables
+    ssh-agent -c
+    | lines
+    | parse "setenv {name} {value};"
+    | where name in ["SSH_AUTH_SOCK", "SSH_AGENT_PID"]
+    | transpose -r
+    | into record
+    | load-env
 
-    # Load first key
-    let keychain_output1 = (bash -c "keychain --eval ~/.ssh/devops 2>/dev/null")
+    # Add SSH keys to the agent
+    let keys = [
+        "~/.ssh/devops"
+        "~/.ssh/github.otto.bus.dev"
+    ]
 
-    # Parse SSH_AUTH_SOCK from first key
-    let auth_sock_line = ($keychain_output1 | lines | find "SSH_AUTH_SOCK" | first)
-    if ($auth_sock_line | is-not-empty) {
-        let auth_sock = ($auth_sock_line | parse 'SSH_AUTH_SOCK="{value}"' | get value.0? | default "")
-        if ($auth_sock | is-not-empty) {
-            $env.SSH_AUTH_SOCK = $auth_sock
+    for key in $keys {
+        let key_path = ($key | path expand)
+        if ($key_path | path exists) {
+            # Ensure correct permissions (0600 for private keys)
+            chmod 600 $key_path
+            # Add key to agent (suppress output)
+            ssh-add $key_path | complete | ignore
         }
     }
-
-    # Parse SSH_AGENT_PID from first key
-    let agent_pid_line = ($keychain_output1 | lines | find "SSH_AGENT_PID" | first)
-    if ($agent_pid_line | is-not-empty) {
-        let agent_pid = ($agent_pid_line | parse 'SSH_AGENT_PID={value};' | get value.0? | default "")
-        if ($agent_pid | is-not-empty) {
-            $env.SSH_AGENT_PID = ($agent_pid | into int)
-        }
-    }
-
-    # Load second key (reuses same agent)
-    bash -c "keychain --eval ~/.ssh/github.otto.bus.dev 2>/dev/null" | ignore
 }
 
+# Helper function to manually start/restart ssh-agent
+def start-ssh-agent [] {
+    ssh-agent -c
+    | lines
+    | parse "setenv {name} {value};"
+    | where name in ["SSH_AUTH_SOCK", "SSH_AGENT_PID"]
+    | transpose -r
+    | into record
+    | load-env
+}
 # # ===== Tmux Auto-attach =====
 # Auto-attach to tmux session if not already in tmux
 if (which tmux | is-not-empty) {
@@ -82,3 +100,4 @@ if (which tmux | is-not-empty) {
     }
   }
 }
+
