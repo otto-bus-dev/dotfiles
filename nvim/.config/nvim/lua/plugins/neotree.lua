@@ -11,13 +11,6 @@ return {
 			require("neo-tree").setup({
 				log_level = "info", -- or "error", "debug", etc.
 				default_component_configs = {
-					-- icon = {
-					--   folder_closed = "",
-					--   folder_open = "",
-					--   folder_empty = "",
-					--   folder_empty_open = "",
-					--   default = "",  -- Default file icon
-					-- },
 					git_status = {
 						symbols = {
 							-- Custom git status icons
@@ -35,20 +28,20 @@ return {
 					modified = {
 						symbol = "", -- Modified file indicator
 					},
-					-- diagnostics = {
-					-- 	symbols = {
-					-- 		hint = "󰌶",
-					-- 		info = "",
-					-- 		warn = "",
-					-- 		error = "",
-					-- 	},
-					-- 	highlights = {
-					-- 		hint = "DiagnosticSignHint",
-					-- 		info = "DiagnosticSignInfo",
-					-- 		warn = "DiagnosticSignWarn",
-					-- 		error = "DiagnosticSignError",
-					-- 	},
-					-- },
+					diagnostics = {
+						symbols = {
+							hint = "󰌶",
+							info = "",
+							warn = "",
+							error = "",
+						},
+						highlights = {
+							hint = "DiagnosticSignHint",
+							info = "DiagnosticSignInfo",
+							warn = "DiagnosticSignWarn",
+							error = "DiagnosticSignError",
+						},
+					},
 				},
 			})
 		end,

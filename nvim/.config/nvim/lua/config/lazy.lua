@@ -22,6 +22,7 @@ require("lazy").setup({
   },
   install = { colorscheme = { "rose-pine" } },
   checker = { enabled = true },
+  rocks = { enabled = false },
   ui = {
     size = { width = 0.4, height = 0.6 },
     border = "rounded",

@@ -1,44 +1,76 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",                           -- Automatically update parsers after installation
-  event = { "BufReadPost", "BufNewFile" },       -- Load Treesitter when opening a file
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter-textobjects", -- Adds advanced text objects
-  },
-  opts = {
-    ensure_installed = {
-      "lua",
-      "vim",
-      "vimdoc",
-      "c",    --, "cpp", "python", "rust",
-      "c_sharp", --, "json", "yaml", "bash"
-      "bash",
-      "regex",
-      "rust",
-    },            -- List of languages to install parsers for
-    highlight = {
-      enable = true, -- Enable Treesitter-based syntax highlighting
-    },
-    indent = {
-      enable = true, -- Enable Treesitter-based indentation
-    },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = "<CR>",  -- Start selection
-        node_incremental = "<CR>", -- Expand selection by node
-        scope_incremental = "<S-CR>", -- Expand selection by scope
-        node_decremental = "<BS>", -- Shrink selection by node
-      },
-    },
-    -- Optional: Enable folding with Treesitter (If you want code folding)
-    fold = {
-      enable = true,
-      disable = {}, -- Optional: Disable folding for specific languages
-    },
-  },
-  config = function(_, opts)
-    -- Set up Treesitter with the provided options
-    require("nvim-treesitter.configs").setup(opts)
-  end,
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	event = { "BufReadPost", "BufNewFile" },
+	opts = {
+		ensure_installed = {
+			"lua",
+			"vim",
+			"vimdoc",
+			"c",
+			"c_sharp",
+			"bash",
+			"nu",
+			"regex",
+			"rust",
+			"sql",
+			"json",
+		},
+		auto_install = true, -- Automatically install missing parsers when entering buffer
+		sync_install = false, -- Install parsers asynchronously
+		highlight = {
+			enable = true,
+		},
+		indent = {
+			enable = true,
+		},
+		incremental_selection = {
+			enable = true,
+			keymaps = {
+				init_selection = "<CR>",
+				node_incremental = "<CR>",
+				scope_incremental = "<S-CR>",
+				node_decremental = "<BS>",
+			},
+		},
+		fold = {
+			enable = true,
+			disable = {},
+		},
+	},
+	config = function(_, opts)
+		-- Configure install settings
+		require("nvim-treesitter.install").compilers = { "gcc", "cc", "clang" }
+		require("nvim-treesitter.install").prefer_git = false
+
+		-- Setup treesitter (using the new API)
+		require("nvim-treesitter.config").setup(opts)
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "sql" },
+			callback = function(args)
+				vim.treesitter.start(args.buf, "sql")
+			end,
+		})
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "json" },
+			callback = function(args)
+				vim.treesitter.start(args.buf, "json")
+			end,
+		})
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "bashrc", "sh" },
+			callback = function(args)
+				vim.treesitter.start(args.buf, "bash")
+			end,
+		})
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "nu" },
+			callback = function(args)
+				vim.treesitter.start(args.buf, "nu")
+			end,
+		})
+	end,
 }

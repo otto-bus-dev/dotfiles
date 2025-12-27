@@ -1,0 +1,80 @@
+return {
+	{
+		"milanglacier/minuet-ai.nvim",
+		config = function()
+			require("minuet").setup({
+				virtualtext = {
+					auto_trigger_ft = {},
+					keymap = {
+						-- accept whole completion
+						accept = "<A-A>",
+						-- accept one line
+						accept_line = "<A-a>",
+						-- accept n lines (prompts for number)
+						-- e.g. "A-z 2 CR" will accept 2 lines
+						accept_n_lines = "<A-z>",
+						-- Cycle to prev completion item, or manually invoke completion
+						prev = "<A-[>",
+						-- Cycle to next completion item, or manually invoke completion
+						next = "<A-]>",
+						dismiss = "<A-e>",
+					},
+				},
+				provider = "claude",
+				-- Your configuration options here
+				provider_options = {
+					claude = {
+						max_tokens = 256,
+						model = "claude-3-5-haiku-20241022",
+						-- system = "see [Prompt] section for the default value",
+						-- few_shots = "see [Prompt] section for the default value",
+						-- chat_input = "See [Prompt Section for default value]",
+						stream = true,
+						api_key = "ANTHROPIC_API_KEY",
+						end_point = "https://api.anthropic.com/v1/messages",
+						optional = {
+							-- pass any additional parameters you want to send to claude request,
+							-- e.g.
+							-- stop_sequences = nil,
+						},
+					},
+				},
+			})
+		end,
+	},
+	{ "nvim-lua/plenary.nvim" },
+	-- optional, if you are using virtual-text frontend, nvim-cmp is not
+	-- required.
+	{ "hrsh7th/nvim-cmp" },
+	-- optional, if you are using virtual-text frontend, blink is not required.
+	{
+		"Saghen/blink.cmp",
+		version = "1.*",
+		config = function()
+			require("blink-cmp").setup({
+				keymap = {
+					-- Manually invoke minuet completion.
+					["<A-y>"] = require("minuet").make_blink_map(),
+				},
+				sources = {
+					-- Enable minuet for autocomplete
+					default = { "lsp", "path", "buffer", "snippets", "minuet" },
+					-- For manual completion only, remove 'minuet' from default
+					providers = {
+						minuet = {
+							name = "minuet",
+							module = "minuet.blink",
+							async = true,
+							-- Should match minuet.config.request_timeout * 1000,
+							-- since minuet.config.request_timeout is in seconds
+							timeout_ms = 3000,
+							score_offset = 50, -- Gives minuet higher priority among suggestions
+						},
+					},
+				},
+				-- Recommended to avoid unnecessary request
+				completion = { trigger = { prefetch_on_insert = false } },
+			})
+		end,
+	},
+}
