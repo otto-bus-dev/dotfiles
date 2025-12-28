@@ -1,5 +1,5 @@
 tmux/.config/tmux/plugins/
-tmux/.config/tmux/
+tmux/.config/tmux/resurect/
 wallpapers/.config/wallpapers/selected/
 nvim/.config/nvim/lazy-lock.json
 hypr/.config/hypr/hyprland/monitors.conf
@@ -13,5 +13,5 @@ ssh/.ssh/ssh-otto.pub
 ssh/.ssh/ssh-obsidian.pub
 ssh/.ssh/known_hosts
 ssh/.ssh/known_hosts.old
-*/Session.vim
+**/Session.vim
 install/yay

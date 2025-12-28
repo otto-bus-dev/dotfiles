@@ -52,6 +52,8 @@ DESKTOP=(
   nwg-look
   bitwarder-cli
   nushell
+  pvetui
+  lazyssh
 )
 
 APPS=(

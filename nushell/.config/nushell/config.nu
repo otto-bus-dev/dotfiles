@@ -64,7 +64,7 @@ do --env {
     load-env $ssh_agent_env
     $ssh_agent_env | save --force $ssh_agent_file
 }
-keychain --eval --quiet /home/otto/.ssh/devops
+keychain --eval /home/otto/.ssh/devops
     | lines
     | where not ($it | is-empty)
     | parse "{k}={v}; export {k2};"
@@ -73,7 +73,7 @@ keychain --eval --quiet /home/otto/.ssh/devops
     | into record
     | load-env
 
-keychain --eval --quiet /home/otto/.ssh/github.otto.bus.dev
+keychain --eval /home/otto/.ssh/github.otto.bus.dev
     | lines
     | where not ($it | is-empty)
     | parse "{k}={v}; export {k2};"
