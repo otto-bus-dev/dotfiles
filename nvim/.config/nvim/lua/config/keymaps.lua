@@ -14,18 +14,18 @@ vim.api.nvim_set_keymap("n", "<Leader>N", ":set nu! relativenumber!<CR>", { nore
 vim.api.nvim_set_keymap("n", "<Leader>bn", ":bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>bp", ":bprev<CR>", { noremap = true, silent = true })
 -- Yank and Paste to/from Clipboard
-vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true, silent = true }) -- Yank to clipboard
-vim.api.nvim_set_keymap("n", "<Leader>p", '"+p', { noremap = true, silent = true }) -- Paste from clipboard
+vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true, silent = true })    -- Yank to clipboard
+vim.api.nvim_set_keymap("n", "<Leader>p", '"+p', { noremap = true, silent = true })    -- Paste from clipboard
 -- Split Navigation (left, below, above, right windows)
 vim.api.nvim_set_keymap("n", "<Leader>h", "<C-w>h", { noremap = true, silent = true }) -- Left window
 vim.api.nvim_set_keymap("n", "<Leader>j", "<C-w>j", { noremap = true, silent = true }) -- Below window
 vim.api.nvim_set_keymap("n", "<Leader>k", "<C-w>k", { noremap = true, silent = true }) -- Above window
 vim.api.nvim_set_keymap("n", "<Leader>l", "<C-w>l", { noremap = true, silent = true }) -- Right window
 -- Resize Windows
-vim.api.nvim_set_keymap("n", "<C-h>", "<C-w><", { noremap = true, silent = true }) -- Resize left
-vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>>", { noremap = true, silent = true }) -- Resize right
-vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>+", { noremap = true, silent = true }) -- Resize up
-vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>-", { noremap = true, silent = true }) -- Resize down
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-w><", { noremap = true, silent = true })     -- Resize left
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>>", { noremap = true, silent = true })     -- Resize right
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>+", { noremap = true, silent = true })     -- Resize up
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>-", { noremap = true, silent = true })     -- Resize down
 -------------------------------------------------------------------------------------------------------------
 
 -- save nvim session (work with tmux resurect)
@@ -44,22 +44,22 @@ vim.api.nvim_set_keymap("n", "<Leader>fg", ":Telescope live_grep<CR>", { noremap
 vim.api.nvim_set_keymap("n", "<Leader>ft", ":Neotree toggle<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>ha",
-	':lua require("harpoon.mark").add_file()<CR>',
-	{ noremap = true, silent = true }
+  "n",
+  "<Leader>ha",
+  ':lua require("harpoon.mark").add_file()<CR>',
+  { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>hu",
-	':lua require("harpoon.ui").toggle_quick_menu()<CR>',
-	{ noremap = true, silent = true }
+  "n",
+  "<Leader>hu",
+  ':lua require("harpoon.ui").toggle_quick_menu()<CR>',
+  { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
-	"n",
-	"<Leader>hd",
-	':lua require("harpoon.ui").toggle_quick_menu()<CR>',
-	{ noremap = true, silent = true }
+  "n",
+  "<Leader>hd",
+  ':lua require("harpoon.ui").toggle_quick_menu()<CR>',
+  { noremap = true, silent = true }
 )
 
 -------------------------------------------------------------------------------------------------------------
@@ -104,13 +104,15 @@ vim.api.nvim_set_keymap("n", "<Leader>pa", ":DBUIFindBuffer<CR>", { noremap = tr
 -------------------------------------------------------------------------------------------------------------
 -- Function to source Neovim configuration
 function _G.source_config()
-	vim.cmd("source " .. vim.fn.stdpath("config") .. "/init.lua")
-	vim.notify("Configuration sourced!", vim.log.levels.INFO)
+  vim.cmd("source " .. vim.fn.stdpath("config") .. "/init.lua")
+  vim.notify("Configuration sourced!", vim.log.levels.INFO)
 end
 
 -- reload configuration
 vim.api.nvim_set_keymap("n", "<Leader>s", ":lua _G.source_config()<CR>", { noremap = true, silent = true })
 -- Plugin management
-vim.api.nvim_set_keymap("n", "<Leader>L", ":Lazy<CR>", { noremap = true, silent = true }) -- Undo
+vim.api.nvim_set_keymap("n", "<Leader>L", ":Lazy<CR>", { noremap = true, silent = true })  -- Undo
 vim.api.nvim_set_keymap("n", "<Leader>M", ":Mason<CR>", { noremap = true, silent = true }) -- Redo
 -------------------------------------------------------------------------------------------------------------
+
+vim.keymap.set("i", "<C-u>", "<C-r>=system(\"uuidgen | tr -d '\\n'\")<CR>", { desc = "Insert UUID" })
