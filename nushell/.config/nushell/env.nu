@@ -10,7 +10,7 @@ $env.LC_ALL = "C.UTF-8"
 $env.LANG = "C.UTF-8"
 
 # Read API key from file
-$env.ANTHROPIC_API_KEY = (open ~/claude_key.pub | str trim)
+# $env.ANTHROPIC_API_KEY = (open ~/claude_key.pub | str trim)
 
 $env.NODE_OPTIONS = "--use-openssl-ca"
 $env.NODE_EXTRA_CA_CERTS = "/etc/ssl/certs/ca-certificates.crt"

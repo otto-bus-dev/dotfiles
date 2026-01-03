@@ -27,6 +27,7 @@ stow wallpapers
 stow fonts
 stow gtk
 stow ssh
+stow nushell
 cd ~
 
 echo "get tmux package manager"

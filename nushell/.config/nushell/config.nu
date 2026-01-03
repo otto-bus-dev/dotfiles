@@ -64,23 +64,6 @@ do --env {
     load-env $ssh_agent_env
     $ssh_agent_env | save --force $ssh_agent_file
 }
-keychain --eval /home/otto/.ssh/devops
-    | lines
-    | where not ($it | is-empty)
-    | parse "{k}={v}; export {k2};"
-    | select k v
-    | transpose --header-row
-    | into record
-    | load-env
-
-keychain --eval /home/otto/.ssh/github.otto.bus.dev
-    | lines
-    | where not ($it | is-empty)
-    | parse "{k}={v}; export {k2};"
-    | select k v
-    | transpose --header-row
-    | into record
-    | load-env
 
 # # ===== Tmux Auto-attach =====
 # Auto-attach to tmux session if not already in tmux
