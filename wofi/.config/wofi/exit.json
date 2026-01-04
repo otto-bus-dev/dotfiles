@@ -3,15 +3,15 @@
   "options": [
     {
       "option": " lock",
-      "action": "/usr/share/scripts/lockscreen.sh"
+      "action": "hyprlock"
     },
     {
       "option": " reboot",
-      "action": "/usr/share/scripts/on-reboot.sh"
+      "action": "systemctl reboot"
     },
     {
       "option": " shutdown",
-      "action": "/usr/share/scripts/on-shutdown.sh"
+      "action": "shutdown -h now"
     }
   ]
 }

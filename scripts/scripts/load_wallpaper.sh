@@ -12,9 +12,7 @@ TARGET_BLUR_FILE="wallpaper_blur.png"
 mkdir -p "$TARGET_DIR"
 
 while true; do
-    # Wait for 5 minutes
-    sleep 300
-    # Get a random wallpaper
+   # Get a random wallpaper
     WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
 
     # Copy the wallpaper to the target directory as wallpaper.png
@@ -23,5 +21,8 @@ while true; do
     magick "$TARGET_DIR$TARGET_FILE" -blur 0x10 "$TARGET_DIR$TARGET_BLUR_FILE"
 
     # Reload the wallpaper in Hyprpaper
-    hyprctl hyprpaper reload ,"$TARGET_DIR$TARGET_FILE"
+    hyprctl hyprpaper wallpaper ,"$TARGET_DIR$TARGET_FILE"
+
+    # Wait for 5 minutes
+    sleep 300
 done
