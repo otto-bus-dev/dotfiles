@@ -54,6 +54,9 @@ DESKTOP=(
   nushell
   pvetui
   lazyssh
+  tree-sitter-cli
+  fzf
+  bat
 )
 
 APPS=(

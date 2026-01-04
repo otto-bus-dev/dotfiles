@@ -72,5 +72,14 @@ return {
         vim.treesitter.start(args.buf, "nu")
       end,
     })
+
+    -- In /home/otto/dotfiles/nvim/.config/nvim/lua/config/autocmds.lua
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "checkhealth",
+      callback = function(args)
+        vim.treesitter.stop(args.buf)
+        vim.cmd("syntax on")
+      end,
+    })
   end,
 }

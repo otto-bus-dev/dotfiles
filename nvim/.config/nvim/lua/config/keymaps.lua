@@ -2,9 +2,6 @@
 -------------------------------------------------------------------------------------------------------------
 -- GENERAL KEYBINDINGS
 -------------------------------------------------------------------------------------------------------------
-vim.api.nvim_set_keymap("n", "<Leader>w", ":w<CR>", { noremap = true, silent = true }) -- Save
-vim.api.nvim_set_keymap("n", "<Leader>q", ":q<CR>", { noremap = true, silent = true }) -- Quit
-vim.api.nvim_set_keymap("n", "<Leader>x", ":x<CR>", { noremap = true, silent = true }) -- Save and Quit
 -- Open Neovim’s Help
 vim.api.nvim_set_keymap("n", "<Leader>?", ":help<Space>", { noremap = true, silent = true })
 -- Toggle Line Numbers
@@ -14,8 +11,9 @@ vim.api.nvim_set_keymap("n", "<Leader>N", ":set nu! relativenumber!<CR>", { nore
 vim.api.nvim_set_keymap("n", "<Leader>bn", ":bnext<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>bp", ":bprev<CR>", { noremap = true, silent = true })
 -- Yank and Paste to/from Clipboard
-vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true, silent = true })    -- Yank to clipboard
-vim.api.nvim_set_keymap("n", "<Leader>p", '"+p', { noremap = true, silent = true })    -- Paste from clipboard
+vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true, silent = true }) -- Yank to clipboard
+vim.api.nvim_set_keymap("n", "<Leader>p", '"+p', { noremap = true, silent = true }) -- Paste from clipboard
+
 -- Split Navigation (left, below, above, right windows)
 vim.api.nvim_set_keymap("n", "<Leader>h", "<C-w>h", { noremap = true, silent = true }) -- Left window
 vim.api.nvim_set_keymap("n", "<Leader>j", "<C-w>j", { noremap = true, silent = true }) -- Below window
@@ -45,23 +43,37 @@ vim.api.nvim_set_keymap("n", "<Leader>ft", ":Neotree toggle<CR>", { noremap = tr
 
 vim.api.nvim_set_keymap(
   "n",
-  "<Leader>ha",
+  "<Leader>fha",
   ':lua require("harpoon.mark").add_file()<CR>',
   { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<Leader>hu",
+  "<Leader>fhu",
   ':lua require("harpoon.ui").toggle_quick_menu()<CR>',
   { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<Leader>hd",
+  "<Leader>fhd",
   ':lua require("harpoon.ui").toggle_quick_menu()<CR>',
   { noremap = true, silent = true }
 )
 
+vim.api.nvim_set_keymap("n", "<Leader>ws", ":sp<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>wv", ":vs<CR>", { noremap = true, silent = true })
+vim.keymap.set(
+  "n",
+  "<Leader>ww",
+  function()
+    local window = require("window-picker").pick_window({ hint = "floating-letter" })
+    if window then
+      vim.api.nvim_set_current_win(window)
+    end
+  end,
+  -- ":lua require('window-picker').pick_window({hint = 'floating-big-letter'})<CR>",
+  { noremap = true, silent = true }
+)
 -------------------------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------------------------
@@ -76,29 +88,20 @@ vim.api.nvim_set_keymap("n", "<F10>", ':lua require"dap".step_over()<CR>', { nor
 -- Step Over (with nvim-dap)
 vim.api.nvim_set_keymap("n", "<F11>", ':lua require"dap".step_into()<CR>', { noremap = true, silent = true })
 -- Toggle DAP UI (for debugging interface)
-vim.api.nvim_set_keymap("n", "<Leader>du", ':lua require"dapui".toggle()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader><F2>", '<cmd>lua require"dapui".eval()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F2>", ':lua require"dapui".toggle()<CR>', { noremap = true, silent = true })
+-- Eval on pointer position
+vim.api.nvim_set_keymap("n", "<F3>", '<cmd>lua require"dapui".eval()<CR>', { noremap = true, silent = true })
 
 -- -- Quick Fix List (useful for showing errors from LSP or other tools)
 vim.api.nvim_set_keymap("n", "<Leader>q", ":copen<CR>", { noremap = true, silent = true })
 
---
--- vim.keymap.set("n", "<leader>bd", function()
--- 	vim.loop.spawn("blender", {
--- 		args = {
--- 			"--python-expr",
--- 			"import debugpy; debugpy.listen(('0.0.0.0', 5678)); debugpy.wait_for_client(); print('Blender is waiting for debugger to attach')",
--- 		},
--- 		detached = true,
--- 	}, function() end)
--- end, { desc = "Start Blender with Debugpy" })
---
 ---------------------------------------------------------------------------------------------------------------
 -- DADBOD
 -------------------------------------------------------------------------------------------------------------
 -- works at runtime, clean and safe
-vim.api.nvim_set_keymap("n", "<Leader>pu", ":DBUIToggle<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Leader>pa", ":DBUIFindBuffer<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>db", ":DBUIToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>da", ":DBUIFindBuffer<CR>", { noremap = true, silent = true })
+
 -------------------------------------------------------------------------------------------------------------
 -- CONFIG
 -------------------------------------------------------------------------------------------------------------
