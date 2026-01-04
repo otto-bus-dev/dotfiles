@@ -40,6 +40,11 @@ def ssh-key-add [email: string] {
     ssh-keygen -t ed25519 -C $email
 }
 
+def fzf [] {
+  ^fzf --preview 'bat --style=numbers --color=always {}' --layout reverse --border --tmux 80%,80%
+}
+alias cat = bat
+
 do --env {
     let ssh_agent_file = (
         "/tmp" | path join $"ssh-agent-(whoami).nuon"

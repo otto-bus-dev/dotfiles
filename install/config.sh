@@ -13,7 +13,7 @@ silent rm ~/.bashrc
 
 echo "stowing dotfiles"
 cd ~/dotfiles
-stow bash
+stow bat
 stow hypr
 stow scripts
 stow waybar
