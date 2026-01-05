@@ -2,20 +2,19 @@
 # Nushell configuration file
 
 # ===== Config Settings =====
-$env.config = {
-    show_banner: false
+$env.config.show_banner = false
 
-    # Enable color by default
-    use_ansi_coloring: true
+# Enable color by default
+$env.config.use_ansi_coloring = true
 
-    # Other useful defaults
-    edit_mode: "vi" 
+# Other useful defaults
+$env.config.edit_mode = "vi" 
+$env.config.buffer_editor = "nvim"
 
-    # Cursor shape
-    cursor_shape: {
-      vi_insert: blink_line
-      vi_normal: block
-    }
+# Cursor shape
+$env.config.cursor_shape = {
+  vi_insert: blink_line
+  vi_normal: block
 }
 
 # ===== Prompt Configuration =====
@@ -39,10 +38,83 @@ $env.PROMPT_MULTILINE_INDICATOR = {||
 def ssh-key-add [email: string] {
     ssh-keygen -t ed25519 -C $email
 }
+#
+# # Find and edit files
+# def ff [] {
+#   let file = (^fzf --preview 'bat --style=numbers --color=always {}' --preview-window 'right:80%:wrap' --bind 'ctrl-/:toggle-preview' --layout reverse --border --tmux 80%,80% --bind 'alt-k:preview-up' --bind 'alt-j:preview-down')
+#   if ($file != '') { nvim $file }
+# }
+# Search file contents (requires ripgrep)
+# def fg [] {
+#   # let file = (^rg --color=always --line-number --no-heading --smart-case "" |
+#   # ^fzf --ansi --delimiter ':' --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' --preview-window '+{2}/2' --layout reverse --border --tmux 80%,80% --bind 'alt-k:preview-up' --bind 'alt-j:preview-down')
+#   # if ($file != '') { nvim $file }
+#   ^rg --color=always --line-number --no-heading --smart-case "" |
+#   ^fzf --ansi --delimiter ':' --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' --preview-window '+{2}/2' --layout reverse --border --tmux 80%,80% --bind 'alt-k:preview-up' --bind 'alt-j:preview-down'
+#
+# }
 
-def fzf [] {
-  ^fzf --preview 'bat --style=numbers --color=always {}' --layout reverse --border --tmux 80%,80%
+
+def --env ff [] {
+  let result = (^fzf --preview 'bat --style=numbers --color=always {}'
+                     --layout reverse
+                     --border
+                     --tmux 80%,80%
+                     --preview-window 'right:65%:wrap' 
+                     --bind 'ctrl-/:toggle-preview'
+                     --bind 'ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down'
+                     --bind 'ctrl-o:become(echo "nvim:{}")'
+                     --bind 'ctrl-e:become(echo "cd:{}")')
+
+  if ($result | str starts-with "cd:") {
+    cd ($result | str replace --all "'" "" | str replace "cd:" "" | path dirname)
+  } else if ($result | str starts-with "nvim:") {
+    nvim ($result | str replace --all "'" ""| str replace "nvim:" "" )
+  } else if ($result != '') {
+    return $result
+  }
 }
+
+def --env fg [] {
+  let result = (
+    ^rg --color=always --line-number --no-heading --smart-case "" |
+    ^fzf --ansi 
+      --delimiter ':' 
+      --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' 
+      --preview-window '+{2}/2' 
+      --layout reverse 
+      --border --tmux 80%,80% 
+      --bind 'alt-k:preview-up' --bind 'alt-j:preview-down'
+      --bind 'ctrl-/:toggle-preview'
+      --bind 'ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down'
+      --bind 'ctrl-o:become(echo "nvim:{}")'
+      --bind 'ctrl-e:become(echo "cd:{}")')
+
+  if ($result | str starts-with "cd:") {
+    cd ($result | str replace --all "'" "" | str replace "cd:" "" | path dirname)
+  } else if ($result | str starts-with "nvim:") {
+    let remove_decoration = $result | str replace --all "'" "" | str replace "nvim:" "" 
+    let index_first_colon = ($remove_decoration | str index-of ":") - 1 
+    let path = $remove_decoration | str substring 0..$index_first_colon  
+    nvim $path
+  } else if ($result != '') {
+    return $result
+  }
+}
+
+def pk [] {
+  (ps | ^fzf --header-lines=1
+                 --layout reverse
+                 --border
+                 --tmux 80%,80%
+                 --preview 'echo {}'
+                 --preview-window 'down:3:wrap'
+                 # --bind 'ctrl-d:execute(kill {2})+reload(ps aux)'
+                 # --bind 'ctrl-x:execute(kill -9 {2})+reload(ps aux)'
+                 --bind 'ctrl-d:execute(echo {2})+reload(ps aux)'
+                 --bind 'ctrl-x:execute(echo {2})+reload(ps aux)')
+}
+
 alias cat = bat
 
 do --env {
