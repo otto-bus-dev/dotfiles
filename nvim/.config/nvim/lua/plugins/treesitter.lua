@@ -44,7 +44,7 @@ return {
     require("nvim-treesitter.install").prefer_git = false
 
     -- Setup treesitter (using the new API)
-    require("nvim-treesitter.configs").setup(opts)
+    require("nvim-treesitter.config").setup(opts)
 
     vim.api.nvim_create_autocmd("FileType", {
       pattern = { "sql" },
