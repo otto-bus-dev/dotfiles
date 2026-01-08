@@ -36,10 +36,6 @@
     {
       "option": "󰨇 monitor",
       "action": "kitty htop"
-    },
-    {
-      "option": " stream-deck",
-      "action": "~/.local/share/script/start_streamdeck_settings.sh"
     }
   ]
 }

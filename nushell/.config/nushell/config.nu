@@ -38,22 +38,6 @@ $env.PROMPT_MULTILINE_INDICATOR = {||
 def ssh-key-add [email: string] {
     ssh-keygen -t ed25519 -C $email
 }
-#
-# # Find and edit files
-# def ff [] {
-#   let file = (^fzf --preview 'bat --style=numbers --color=always {}' --preview-window 'right:80%:wrap' --bind 'ctrl-/:toggle-preview' --layout reverse --border --tmux 80%,80% --bind 'alt-k:preview-up' --bind 'alt-j:preview-down')
-#   if ($file != '') { nvim $file }
-# }
-# Search file contents (requires ripgrep)
-# def fg [] {
-#   # let file = (^rg --color=always --line-number --no-heading --smart-case "" |
-#   # ^fzf --ansi --delimiter ':' --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' --preview-window '+{2}/2' --layout reverse --border --tmux 80%,80% --bind 'alt-k:preview-up' --bind 'alt-j:preview-down')
-#   # if ($file != '') { nvim $file }
-#   ^rg --color=always --line-number --no-heading --smart-case "" |
-#   ^fzf --ansi --delimiter ':' --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' --preview-window '+{2}/2' --layout reverse --border --tmux 80%,80% --bind 'alt-k:preview-up' --bind 'alt-j:preview-down'
-#
-# }
-
 
 def --env ff [] {
   let result = (^fzf --preview 'bat --style=numbers --color=always {}'
@@ -109,10 +93,9 @@ def pk [] {
                  --tmux 80%,80%
                  --preview 'echo {}'
                  --preview-window 'down:3:wrap'
-                 # --bind 'ctrl-d:execute(kill {2})+reload(ps aux)'
-                 # --bind 'ctrl-x:execute(kill -9 {2})+reload(ps aux)'
-                 --bind 'ctrl-d:execute(echo {2})+reload(ps aux)'
-                 --bind 'ctrl-x:execute(echo {2})+reload(ps aux)')
+                 --header 'Ctrl-D: kill | Ctrl-X: force kill'
+                 --bind 'ctrl-d:execute(kill {2})+reload(ps)'
+                 --bind 'ctrl-x:execute(kill -9 {2})+reload(ps)')
 }
 
 alias cat = bat
@@ -125,13 +108,16 @@ do --env {
     if ($ssh_agent_file | path exists) {
         let ssh_agent_env = open ($ssh_agent_file)
         if ($"/proc/($ssh_agent_env.SSH_AGENT_PID)" | path exists) {
+            # Agent is still running, reuse it
             load-env $ssh_agent_env
             return
         } else {
+            # Agent is dead, clean up stale file
             rm $ssh_agent_file
         }
     }
 
+    # Start a new ssh-agent
     let ssh_agent_env = ^ssh-agent -c
         | lines
         | first 2

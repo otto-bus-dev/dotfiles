@@ -36,7 +36,8 @@ rm -f "$LOCKFILE"
 # Take action based on the selection
 if [[ -n "$selection" ]] && [[ -n "${actions[$selection]}" ]]; then
   # Execute the action associated with the selected option
-  eval "${actions[$selection]}"
+  # Using sh -c instead of eval for better security
+  sh -c "${actions[$selection]}" &
 else
   echo "No valid option selected."
 fi

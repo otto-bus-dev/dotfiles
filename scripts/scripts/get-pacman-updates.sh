@@ -6,7 +6,7 @@ else
   if [ "$updates" -lt 5 ]; then
     echo -e "<span foreground='#e0def4'><sup>󰮯 $updates</sup></span>"
   else 
-    if [ "$updates" -lt 10]; then
+    if [ "$updates" -lt 10 ]; then
       echo -e "<span foreground='#f6c177'><sup>󰮯 $updates</sup></span>"
     else
       echo -e "<span foreground='#eb6f92'><sup>󰮯 $updates</sup></span>"

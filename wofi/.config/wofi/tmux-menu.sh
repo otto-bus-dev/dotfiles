@@ -21,10 +21,7 @@ while IFS= read -r session; do
   options+=("$option")
 done < <(tmux list-sessions -F '#S')
 option="new"
-
-#action="kitty sh -c \"read -p 'Enter new session name : ' new_name;echo \\\$new_name;tmux new-session -s  \\\"\\\$new_name\\\"; exec sh\""
-action="kitty eval \"read -p 'Enter new session name : ' new_name;tmux new-session -s  \\\"$new_name\\\"\""
-actions["$option"]="$action"
+# The "new" action is handled separately in the conditional below
 options+=("$option")
 
 prompt="Select a tmux session" # Set a default prompt if not provided in the config
@@ -46,7 +43,7 @@ else
   # Take action based on the selection
   if [[ -n "$selection" ]] && [[ -n "${actions[$selection]}" ]]; then
     # Execute the action associated with the selected option
-    eval "${actions[$selection]}"
+    sh -c "${actions[$selection]}" &
   else
     echo "No valid option selected."
   fi

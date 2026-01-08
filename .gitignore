@@ -1,10 +1,25 @@
+# Tmux
 tmux/.config/tmux/plugins/
 tmux/.config/tmux/resurect/
+
+# Wallpapers
 wallpapers/.config/wallpapers/selected/
+
+# Neovim
 nvim/.config/nvim/lazy-lock.json
+nvim/.config/nvim/.luarc.json
+nvim/.config/nvim/dependencies/
+nvim/.config/nvim/luarocks/
+**/Session.vim
+
+# Hyprland
 hypr/.config/hypr/hyprland/monitors.conf
 hyprctl_output.json
+
+# Brave browser
 brave
+
+# SSH keys and known hosts
 ssh/.ssh/github
 ssh/.ssh/ssh-otto
 ssh/.ssh/ssh-obsidian
@@ -13,5 +28,20 @@ ssh/.ssh/ssh-otto.pub
 ssh/.ssh/ssh-obsidian.pub
 ssh/.ssh/known_hosts
 ssh/.ssh/known_hosts.old
-**/Session.vim
+
+# Git
+git/.gitconfig.local
+
+# Install scripts
 install/yay
+
+# Temporary/runtime files
+*.pid
+/tmp/
+*.log
+*.swp
+*.swo
+*~
+
+# Script PID files
+scripts/scripts/*.pid

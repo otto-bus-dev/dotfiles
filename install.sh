@@ -6,8 +6,10 @@ if [[ "$1" == "full" ]]; then
   echo "//////////////////////////////////////////////////////"
   echo "super user password"
   sudo -v  # Ask for password once
+  # Keep sudo alive for the duration of this script only
   while true; do sudo -n true; sleep 60; done 2>/dev/null &
-  # Your script here
+  SUDO_PID=$!
+  trap "kill $SUDO_PID 2>/dev/null" EXIT
   echo "Git Global User Config"
   read -p "Enter your git user mail: " git_user_mail 
   read -p "Enter your git user name: " git_user_name
