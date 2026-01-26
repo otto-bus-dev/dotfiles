@@ -8,7 +8,7 @@ flock -n 200 || exit 1
 if [[ -n "$1" ]]; then
   search_dir="$1"
 else
-  search_dir="/home/otto/dotfiles/ /home/otto/.config/ /home/otto/src/"
+  search_dir="$HOME/dotfiles/ $HOME/.config/ $HOME/src/"
 fi
 
 

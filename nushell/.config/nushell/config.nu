@@ -10,11 +10,11 @@ $env.config.use_ansi_coloring = true
 # Other useful defaults
 $env.config.edit_mode = "vi" 
 $env.config.buffer_editor = "nvim"
-
+#
 # Cursor shape
 $env.config.cursor_shape = {
-  vi_insert: blink_line
-  vi_normal: block
+  vi_insert: blink_underscore
+  vi_normal: blink_block
 }
 
 # ===== Prompt Configuration =====
@@ -39,6 +39,10 @@ def ssh-key-add [email: string] {
     ssh-keygen -t ed25519 -C $email
 }
 
+def --wrapped fab [...args] {
+    ^$"($env.HOME)/python_venv/venv/bin/fab" ...$args
+}
+
 def --env ff [] {
   let result = (^fzf --preview 'bat --style=numbers --color=always {}'
                      --layout reverse
@@ -59,15 +63,21 @@ def --env ff [] {
   }
 }
 
-def --env fg [] {
+def --env fg [file?: path] {
+  let rg_cmd = if ($file != null) {
+    ^rg --color=always --line-number --no-heading --smart-case --with-filename "" $file
+  } else {
+    ^rg --color=always --line-number --no-heading --smart-case ""
+  }
+
   let result = (
-    ^rg --color=always --line-number --no-heading --smart-case "" |
-    ^fzf --ansi 
-      --delimiter ':' 
-      --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' 
-      --preview-window '+{2}/2' 
-      --layout reverse 
-      --border --tmux 80%,80% 
+    $rg_cmd |
+    ^fzf --ansi
+      --delimiter ':'
+      --preview 'bat --style=numbers --color=always --highlight-line {2} {1}'
+      --preview-window '+{2}/2'
+      --layout reverse
+      --border --tmux 80%,80%
       --bind 'alt-k:preview-up' --bind 'alt-j:preview-down'
       --bind 'ctrl-/:toggle-preview'
       --bind 'ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down'
@@ -77,14 +87,15 @@ def --env fg [] {
   if ($result | str starts-with "cd:") {
     cd ($result | str replace --all "'" "" | str replace "cd:" "" | path dirname)
   } else if ($result | str starts-with "nvim:") {
-    let remove_decoration = $result | str replace --all "'" "" | str replace "nvim:" "" 
-    let index_first_colon = ($remove_decoration | str index-of ":") - 1 
-    let path = $remove_decoration | str substring 0..$index_first_colon  
+    let remove_decoration = $result | str replace --all "'" "" | str replace "nvim:" ""
+    let index_first_colon = ($remove_decoration | str index-of ":") - 1
+    let path = $remove_decoration | str substring 0..$index_first_colon
     nvim $path
   } else if ($result != '') {
     return $result
   }
 }
+
 
 def pk [] {
   (ps | ^fzf --header-lines=1
@@ -97,6 +108,7 @@ def pk [] {
                  --bind 'ctrl-d:execute(kill {2})+reload(ps)'
                  --bind 'ctrl-x:execute(kill -9 {2})+reload(ps)')
 }
+
 
 alias cat = bat
 

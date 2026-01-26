@@ -106,11 +106,11 @@ return {
       local python_path = os.getenv("BLENDER_PYTHON_PATH")
       local blender_lib_path = os.getenv("BLENDER_PYTHON_LIB_PATH")
       local blender_bl_operators_path = os.getenv("BLENDER_PYTHON_BL_OPERATORS")
-      -- notify the user if the environment variable is not set
-      if not python_path or python_path == "" then
+      -- notify the user if blender env is not set (only when blender is available)
+      if vim.fn.executable("blender") == 1 and (not python_path or python_path == "") then
         vim.notify(
-          "BLENDER_PYTHON_PATH environment variable shoud be set to enable PYTHON debugging for blender",
-          vim.log.levels.ERROR
+          "BLENDER_PYTHON_PATH environment variable should be set to enable PYTHON debugging for blender",
+          vim.log.levels.WARN
         )
       end
 
@@ -120,7 +120,7 @@ return {
 
       local final_python_path = os.getenv("VIRTUAL_ENV") and os.getenv("VIRTUAL_ENV") .. "/bin/python"
           or python_path
-          or "/usr/bin/python3"
+          or vim.fn.exepath("python3")
 
       -- MIGRATED TO vim.lsp.config()
       vim.lsp.config("pyright", {

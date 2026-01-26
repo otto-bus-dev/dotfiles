@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Directory containing wallpapers
-WALLPAPER_DIR="/home/otto/.config/wallpapers/all/"
+WALLPAPER_DIR="$HOME/.config/wallpapers/all/"
 
 # Directory where the wallpaper.png will be stored
-TARGET_DIR="/home/otto/.config/wallpapers/selected/"
+TARGET_DIR="$HOME/.config/wallpapers/selected/"
 TARGET_FILE="wallpaper.png"
 TARGET_BLUR_FILE="wallpaper_blur.png"
 PID_FILE="/tmp/load_wallpaper.pid"

@@ -14,14 +14,19 @@ $env.MANPAGER = "bat -plman"
 $env.NODE_OPTIONS = "--use-openssl-ca"
 $env.NODE_EXTRA_CA_CERTS = "/etc/ssl/certs/ca-certificates.crt"
 
-# Blender Python configuration
-$env.BLENDER_PYTHON_PATH = "/usr/bin/python3.13"
-$env.BLENDER_PYTHON_LIB_PATH = "/usr/share/blender/4.4/scripts/modules/"
-$env.BLENDER_PYTHON_BL_OPERATORS = "/usr/share/blender/4.4/scripts/startup/"
+# Blender Python configuration (only if blender is installed)
+if (which blender | is-not-empty) {
+    let blender_ver = (ls /usr/share/blender/ | get name | first | path basename)
+    $env.BLENDER_PYTHON_PATH = (which python3 | get 0.path)
+    $env.BLENDER_PYTHON_LIB_PATH = $"/usr/share/blender/($blender_ver)/scripts/modules/"
+    $env.BLENDER_PYTHON_BL_OPERATORS = $"/usr/share/blender/($blender_ver)/scripts/startup/"
+}
 
-# WLR and VirtualBox settings
-$env.WLR_DRM_NO_ATOMIC = "1"
-$env.VBOX_VGPU = "1"
+# Wayland / desktop-only settings
+if ($env.WAYLAND_DISPLAY? | is-not-empty) {
+    $env.WLR_DRM_NO_ATOMIC = "1"
+    $env.VBOX_VGPU = "1"
+}
 
 $env.FZF_DEFAULT_OPTS = "
 	--color=fg:#908caa,bg:#232136,hl:#ea9a97
@@ -30,9 +35,11 @@ $env.FZF_DEFAULT_OPTS = "
 	--color=spinner:#f6c177,info:#9ccfd8
 	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
 
-# Cursor theme
-$env.XCURSOR_THEME = "BreezeX-RosePine-Linux"
-$env.XCURSOR_SIZE = "24"
+# Cursor theme (desktop only)
+if ($env.WAYLAND_DISPLAY? | is-not-empty) {
+    $env.XCURSOR_THEME = "BreezeX-RosePine-Linux"
+    $env.XCURSOR_SIZE = "24"
+}
 
 # ===== PATH Configuration =====
 $env.PATH = ($env.PATH | split row (char esep) | append [
