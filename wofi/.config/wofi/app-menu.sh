@@ -28,7 +28,7 @@ done < <(jq -c '.options[]' "$CONFIG_FILE")
 
 # Calculate the height of the menu based on the number of options
 num_options=$(jq '.options | length' "$CONFIG_FILE")
-menu_height=$((num_options * 34)) # Adjust 50 to fit your desired row height
+menu_height=$(((num_options + 1) * 34)) # Adjust 50 to fit your desired row height
 
 # Use wofi in dmenu mode to let the user select an option
 selection=$(echo -e "$options" | wofi --height "$menu_height" --width 250 --prompt "$prompt" )
