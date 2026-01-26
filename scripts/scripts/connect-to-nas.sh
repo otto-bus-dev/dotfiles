@@ -55,7 +55,7 @@ fi
 add_shared_folder(){
   local added=0
   for folder in "${SHARED_FOLDER[@]}"; do
-    local mount_line="$NAS_HOST:/volume1/$folder $USER_HOME/mount/nas/$folder nfs   rw,user,_netdev,x-systemd.automount   0 0"
+    local mount_line="$NAS_HOST:/volume1/$folder $USER_HOME/mount/nas/$folder nfs   rw,user,noauto,x-systemd.automount,x-systemd.idle-timeout=60,x-systemd.mount-timeout=5   0 0"
 
     # Check if line exists
     if grep -Fxq "$mount_line" /etc/fstab; then
